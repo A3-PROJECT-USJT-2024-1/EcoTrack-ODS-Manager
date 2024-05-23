@@ -64,6 +64,7 @@ public class TelaLogin extends javax.swing.JFrame {
         txtSenha.setForeground(new java.awt.Color(255, 255, 255));
         txtSenha.setText("Senha:");
 
+        btnLogin.setFont(new java.awt.Font("Gliker", 0, 12)); // NOI18N
         btnLogin.setText("Entrar");
         btnLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -71,6 +72,7 @@ public class TelaLogin extends javax.swing.JFrame {
             }
         });
 
+        btnCadastrar.setFont(new java.awt.Font("Gliker", 0, 12)); // NOI18N
         btnCadastrar.setText("Cadastrar-se");
         btnCadastrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
