@@ -1,0 +1,2 @@
+
+O Eco Track é um sistema incrivelmente acessível e intuitivo, projetado para proporcionar uma experiência agradável e amigável ao usuário. Neste espaço inovador, você pode cadastrar suas ideias de projetos que visam solucionar problemas globais, alinhados com as 17 Metas de Desenvolvimento Sustentável (ODS). Suas ideias têm o potencial de se tornar altamente relevantes e alcançar um público ainda maior através do nosso sistema. Eco Track: por um mundo melhor e mais sustentável!
