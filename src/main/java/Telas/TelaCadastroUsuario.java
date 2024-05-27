@@ -4,6 +4,8 @@
  */
 package Telas;
 
+import Model.Usuario;
+
 /**
  *
  * @author 12101863
@@ -74,6 +76,12 @@ public class TelaCadastroUsuario extends javax.swing.JFrame {
         txtConfirmaSenha.setFont(new java.awt.Font("Gliker", 1, 36)); // NOI18N
         txtConfirmaSenha.setForeground(new java.awt.Color(255, 255, 255));
         txtConfirmaSenha.setText("Confirmar Senha:");
+
+        txtfielUsuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtfielUsuarioActionPerformed(evt);
+            }
+        });
 
         txtfieldEmail.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -203,6 +211,10 @@ public class TelaCadastroUsuario extends javax.swing.JFrame {
     private void txtfieldEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtfieldEmailActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtfieldEmailActionPerformed
+
+    private void txtfielUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtfielUsuarioActionPerformed
+
+    }//GEN-LAST:event_txtfielUsuarioActionPerformed
 
     /**
      * @param args the command line arguments

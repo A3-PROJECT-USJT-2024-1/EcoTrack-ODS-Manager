@@ -61,5 +61,7 @@ public class Usuario {
         this.telefone = telefone;
         this.email = email;
         this.senha = senha;
+        
+    
     }
 }

@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package DAO;
+package Connection;
 
 /**
  *
@@ -14,10 +14,10 @@ import java.sql.DriverManager;
 public class ConnectionFactory {
     
     private String usuario = "root";
-    private String senha = "210511";
+    private String senha = "1234";
     private String host = "localhost";
     private String porta = "3306";
-    private String bd = "db_pessoas";
+    private String bd = "db_ecotrack";
     
     public Connection obtemConexao (){
         try{
