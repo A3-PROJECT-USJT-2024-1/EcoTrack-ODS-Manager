@@ -1,1 +1,28 @@
-TXT com o código SQL atualizado pela equipe de banco
+CREATE DATABASE db_ecotrack;
+
+USE db_ecotrack;
+
+CREATE TABLE tb_Usuario (
+    id_Usuario INT AUTO_INCREMENT PRIMARY KEY,
+    login_Usuario VARCHAR(200) NOT NULL UNIQUE,
+    senha VARCHAR(200) NOT NULL,
+    nome VARCHAR(200) NOT NULL,
+    telefone VARCHAR(200),
+    email VARCHAR(200) NOT NULL UNIQUE,
+    privilegio ENUM('Administrador', 'Usuario') NOT NULL
+);
+
+CREATE TABLE tb_Ods (
+    numero_Ods INT PRIMARY KEY,
+    nome_Ods VARCHAR(200) NOT NULL UNIQUE
+);
+
+CREATE TABLE tb_Projeto (
+    id_Projeto INT AUTO_INCREMENT PRIMARY KEY,
+    nome_Projeto VARCHAR(200) NOT NULL,
+    descricao TEXT NOT NULL,
+    data_Criacao DATE NOT NULL,
+    nome_ODS VARCHAR(200),
+    status BOOLEAN NOT NULL,
+    FOREIGN KEY (nome_ODS) REFERENCES tb_Ods(nome_Ods)
+);
