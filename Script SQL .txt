@@ -26,3 +26,12 @@ CREATE TABLE tb_Projeto (
     status BOOLEAN NOT NULL,
     FOREIGN KEY (nome_ODS) REFERENCES tb_Ods(nome_Ods)
 );
+
+CREATE TABLE tb_Curte (
+    fk_Projeto_id_Projeto INT,
+    fk_Usuario_login_Usuario VARCHAR(200),
+    data TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (fk_Projeto_id_Projeto, fk_Usuario_login_Usuario),
+    FOREIGN KEY (fk_Projeto_id_Projeto) REFERENCES tb_Projeto(id_Projeto),
+    FOREIGN KEY (fk_Usuario_login_Usuario) REFERENCES tb_Usuario(login_Usuario)
+);
