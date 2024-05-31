@@ -45,8 +45,6 @@ public class TelaLogin extends javax.swing.JFrame {
         setTitle("Login");
         setBackground(new java.awt.Color(255, 0, 255));
 
-        jPanel1.setBackground(new java.awt.Color(169, 172, 200));
-
         imgLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/LOGO_A3_SEM_FUNDO.png"))); // NOI18N
         imgLogo.setText("jLabel1");
 
@@ -156,6 +154,9 @@ public class TelaLogin extends javax.swing.JFrame {
 
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
         // TODO add your handling code here:
+        String usuario = fieldUsuario.getText();
+        String senha = fieldSenha.getText();
+        ;
     }//GEN-LAST:event_btnLoginActionPerformed
 
     private void btnCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarActionPerformed
