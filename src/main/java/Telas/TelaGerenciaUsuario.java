@@ -46,8 +46,11 @@ public class TelaGerenciaUsuario extends javax.swing.JFrame {
         textFieldNome = new javax.swing.JTextField();
         textFieldEmail = new javax.swing.JTextField();
         alterarSenhaButton = new javax.swing.JButton();
+        VoltarButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("ECO Track - Gerenciar Usuário");
+        setResizable(false);
 
         jPanel1.setMaximumSize(new java.awt.Dimension(800, 600));
         jPanel1.setPreferredSize(new java.awt.Dimension(800, 600));
@@ -133,6 +136,14 @@ public class TelaGerenciaUsuario extends javax.swing.JFrame {
         alterarSenhaButton.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         alterarSenhaButton.setFocusable(false);
 
+        VoltarButton.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
+        VoltarButton.setText("Voltar");
+        VoltarButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                VoltarButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -170,7 +181,9 @@ public class TelaGerenciaUsuario extends javax.swing.JFrame {
                         .addComponent(pesquisarUsuarioButton, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(43, 43, 43))))
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(325, 325, 325)
+                .addGap(224, 224, 224)
+                .addComponent(VoltarButton)
+                .addGap(18, 18, 18)
                 .addComponent(concluidoButton)
                 .addGap(18, 18, 18)
                 .addComponent(salvarButton, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -227,7 +240,8 @@ public class TelaGerenciaUsuario extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(lixeiraButton, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(salvarButton, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(concluidoButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(concluidoButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(VoltarButton, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addGap(79, 79, 79))
         );
 
@@ -243,6 +257,7 @@ public class TelaGerenciaUsuario extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void lixeiraButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lixeiraButtonActionPerformed
@@ -268,6 +283,11 @@ public class TelaGerenciaUsuario extends javax.swing.JFrame {
     private void textFieldEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFieldEmailActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_textFieldEmailActionPerformed
+
+    private void VoltarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VoltarButtonActionPerformed
+        // TODO add your handling code here:
+        new TelaProjeto().setVisible(true);
+    }//GEN-LAST:event_VoltarButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -306,6 +326,7 @@ public class TelaGerenciaUsuario extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> ComboBoxPrivilegios;
+    private javax.swing.JButton VoltarButton;
     private javax.swing.JButton alterarSenhaButton;
     private javax.swing.JButton concluidoButton;
     private javax.swing.JLabel jLabel1;

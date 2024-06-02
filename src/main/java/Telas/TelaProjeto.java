@@ -51,6 +51,9 @@ public class TelaProjeto extends javax.swing.JFrame {
         jScrollPane5 = new javax.swing.JScrollPane();
         TextAreaZ = new javax.swing.JTextArea();
 
+        setTitle("ECO Track - Projetos");
+        setResizable(false);
+
         jPanel1.setPreferredSize(new java.awt.Dimension(800, 600));
 
         ImgUsuario.setBorder(javax.swing.BorderFactory.createTitledBorder("Usuario"));
@@ -261,8 +264,8 @@ public class TelaProjeto extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 605, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 610, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -289,6 +292,7 @@ public class TelaProjeto extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void SairButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SairButtonActionPerformed
@@ -297,10 +301,12 @@ public class TelaProjeto extends javax.swing.JFrame {
 
     private void GerenciarUsuariosButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GerenciarUsuariosButtonActionPerformed
         // TODO add your handling code here:
+        new TelaGerenciaUsuario().setVisible(true);
     }//GEN-LAST:event_GerenciarUsuariosButtonActionPerformed
 
     private void ProcurarProjetoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ProcurarProjetoButtonActionPerformed
         // TODO add your handling code here:
+        new TelaPesquisarProjeto().setVisible(true);
     }//GEN-LAST:event_ProcurarProjetoButtonActionPerformed
 
     private void GerenciarProjetosButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GerenciarProjetosButtonActionPerformed
@@ -321,10 +327,12 @@ public class TelaProjeto extends javax.swing.JFrame {
 
     private void DetalhesDoProjetoXActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DetalhesDoProjetoXActionPerformed
         // TODO add your handling code here:
+        new TelaDetalheProjeto().setVisible(true);
     }//GEN-LAST:event_DetalhesDoProjetoXActionPerformed
 
     private void DetalhesDoProjetoButtonWActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DetalhesDoProjetoButtonWActionPerformed
         // TODO add your handling code here:
+        new TelaDetalheProjeto().setVisible(true);
     }//GEN-LAST:event_DetalhesDoProjetoButtonWActionPerformed
 
     private void CurtirButtonWActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CurtirButtonWActionPerformed
@@ -337,6 +345,7 @@ public class TelaProjeto extends javax.swing.JFrame {
 
     private void DetalhesDoProjetoButtonZActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DetalhesDoProjetoButtonZActionPerformed
         // TODO add your handling code here:
+        new TelaDetalheProjeto().setVisible(true);
     }//GEN-LAST:event_DetalhesDoProjetoButtonZActionPerformed
 
     private void CurtirButtonZActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CurtirButtonZActionPerformed

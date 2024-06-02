@@ -14,7 +14,7 @@ import java.sql.DriverManager;
 public class ConnectionFactory {
     
     private String usuario = "root";
-    private String senha = "1234";
+    private String senha = "Alfa&omega007";
     private String host = "localhost";
     private String porta = "3306";
     private String bd = "db_ecotrack";
