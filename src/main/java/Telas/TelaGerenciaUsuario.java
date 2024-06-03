@@ -4,6 +4,8 @@
  */
 package Telas;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author eu
@@ -46,9 +48,7 @@ public class TelaGerenciaUsuario extends javax.swing.JFrame {
         textFieldNome = new javax.swing.JTextField();
         textFieldEmail = new javax.swing.JTextField();
         alterarSenhaButton = new javax.swing.JButton();
-        VoltarButton = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("ECO Track - Gerenciar Usuário");
         setResizable(false);
 
@@ -60,6 +60,11 @@ public class TelaGerenciaUsuario extends javax.swing.JFrame {
         concluidoButton.setFont(new java.awt.Font("Liberation Sans", 1, 16)); // NOI18N
         concluidoButton.setText("Concluido");
         concluidoButton.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        concluidoButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                concluidoButtonActionPerformed(evt);
+            }
+        });
 
         pesquisarUsuarioButton.setText("Pesquisar");
         pesquisarUsuarioButton.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -74,8 +79,13 @@ public class TelaGerenciaUsuario extends javax.swing.JFrame {
 
         salvarButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/11646.jpg"))); // NOI18N
         salvarButton.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        salvarButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                salvarButtonActionPerformed(evt);
+            }
+        });
 
-        ComboBoxPrivilegios.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        ComboBoxPrivilegios.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecionar", "Usuario Comum", "Administrador", "Desenvolvedor" }));
         ComboBoxPrivilegios.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ComboBoxPrivilegiosActionPerformed(evt);
@@ -135,12 +145,9 @@ public class TelaGerenciaUsuario extends javax.swing.JFrame {
         alterarSenhaButton.setText("Alterar");
         alterarSenhaButton.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         alterarSenhaButton.setFocusable(false);
-
-        VoltarButton.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
-        VoltarButton.setText("Voltar");
-        VoltarButton.addActionListener(new java.awt.event.ActionListener() {
+        alterarSenhaButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                VoltarButtonActionPerformed(evt);
+                alterarSenhaButtonActionPerformed(evt);
             }
         });
 
@@ -181,9 +188,7 @@ public class TelaGerenciaUsuario extends javax.swing.JFrame {
                         .addComponent(pesquisarUsuarioButton, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(43, 43, 43))))
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(224, 224, 224)
-                .addComponent(VoltarButton)
-                .addGap(18, 18, 18)
+                .addGap(308, 308, 308)
                 .addComponent(concluidoButton)
                 .addGap(18, 18, 18)
                 .addComponent(salvarButton, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -240,8 +245,7 @@ public class TelaGerenciaUsuario extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(lixeiraButton, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(salvarButton, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(concluidoButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(VoltarButton, javax.swing.GroupLayout.Alignment.TRAILING))
+                    .addComponent(concluidoButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(79, 79, 79))
         );
 
@@ -262,6 +266,7 @@ public class TelaGerenciaUsuario extends javax.swing.JFrame {
 
     private void lixeiraButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lixeiraButtonActionPerformed
         // TODO add your handling code here:
+    
     }//GEN-LAST:event_lixeiraButtonActionPerformed
 
     private void ComboBoxPrivilegiosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComboBoxPrivilegiosActionPerformed
@@ -284,10 +289,20 @@ public class TelaGerenciaUsuario extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_textFieldEmailActionPerformed
 
-    private void VoltarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VoltarButtonActionPerformed
+    private void concluidoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_concluidoButtonActionPerformed
         // TODO add your handling code here:
-        new TelaProjeto().setVisible(true);
-    }//GEN-LAST:event_VoltarButtonActionPerformed
+        
+    }//GEN-LAST:event_concluidoButtonActionPerformed
+
+    private void salvarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salvarButtonActionPerformed
+        // TODO add your handling code here:
+        JOptionPane.showMessageDialog(null, "Alterção feita com sucesso");
+    }//GEN-LAST:event_salvarButtonActionPerformed
+
+    private void alterarSenhaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_alterarSenhaButtonActionPerformed
+        // TODO add your handling code here:
+        JOptionPane.showMessageDialog(null, "Senha Alterada com sucesso.");
+    }//GEN-LAST:event_alterarSenhaButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -326,7 +341,6 @@ public class TelaGerenciaUsuario extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> ComboBoxPrivilegios;
-    private javax.swing.JButton VoltarButton;
     private javax.swing.JButton alterarSenhaButton;
     private javax.swing.JButton concluidoButton;
     private javax.swing.JLabel jLabel1;

@@ -297,6 +297,7 @@ public class TelaProjeto extends javax.swing.JFrame {
 
     private void SairButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SairButtonActionPerformed
         // TODO add your handling code here:
+        
     }//GEN-LAST:event_SairButtonActionPerformed
 
     private void GerenciarUsuariosButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GerenciarUsuariosButtonActionPerformed
@@ -311,6 +312,7 @@ public class TelaProjeto extends javax.swing.JFrame {
 
     private void GerenciarProjetosButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GerenciarProjetosButtonActionPerformed
         // TODO add your handling code here:
+       
     }//GEN-LAST:event_GerenciarProjetosButtonActionPerformed
 
     private void CurtirButtonXActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CurtirButtonXActionPerformed

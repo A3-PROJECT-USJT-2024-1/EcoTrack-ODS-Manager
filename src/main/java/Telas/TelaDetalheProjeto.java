@@ -37,7 +37,7 @@ public class TelaDetalheProjeto extends javax.swing.JFrame {
         lbl_Descricao = new javax.swing.JLabel();
         btn_Procurar = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(169, 172, 200));
 
@@ -54,21 +54,19 @@ public class TelaDetalheProjeto extends javax.swing.JFrame {
         lbl_Data.setText("\"DD/MM/AA\"");
 
         txt_ID.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        txt_ID.setForeground(new java.awt.Color(0, 0, 0));
         txt_ID.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txt_ID.setText("ID");
 
         lbl_NomeDoProjeto.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         lbl_NomeDoProjeto.setForeground(new java.awt.Color(255, 255, 255));
         lbl_NomeDoProjeto.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lbl_NomeDoProjeto.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Nome do Projeto", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(255, 255, 255))); // NOI18N
+        lbl_NomeDoProjeto.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Nome do Projeto", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Liberation Sans", 0, 15), new java.awt.Color(255, 255, 255))); // NOI18N
 
         lbl_Criador.setBackground(new java.awt.Color(51, 51, 51));
         lbl_Criador.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         lbl_Criador.setForeground(new java.awt.Color(255, 255, 255));
-        lbl_Criador.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Criador:", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(255, 255, 255))); // NOI18N
+        lbl_Criador.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Criador:", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Liberation Sans", 0, 15), new java.awt.Color(255, 255, 255))); // NOI18N
 
-        btn_Concluido.setForeground(new java.awt.Color(0, 0, 0));
         btn_Concluido.setText("Concluído");
         btn_Concluido.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -76,16 +74,14 @@ public class TelaDetalheProjeto extends javax.swing.JFrame {
             }
         });
 
-        btn_Curtir.setForeground(new java.awt.Color(0, 0, 0));
         btn_Curtir.setText("Curtir");
 
         lbl_Descricao.setForeground(new java.awt.Color(255, 255, 255));
         lbl_Descricao.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbl_Descricao.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        lbl_Descricao.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "\"Descrição do projeto\"", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(255, 255, 255))); // NOI18N
+        lbl_Descricao.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "\"Descrição do projeto\"", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Liberation Sans", 0, 15), new java.awt.Color(255, 255, 255))); // NOI18N
 
         btn_Procurar.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        btn_Procurar.setForeground(new java.awt.Color(0, 0, 0));
         btn_Procurar.setText("Procurar");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);

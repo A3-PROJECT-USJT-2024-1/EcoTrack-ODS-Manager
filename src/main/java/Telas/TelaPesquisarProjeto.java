@@ -36,9 +36,12 @@ public class TelaPesquisarProjeto extends javax.swing.JFrame {
         btnProcurar = new javax.swing.JButton();
         txtTitulo = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jpanelFundo.setBackground(new java.awt.Color(169, 172, 200));
+        jpanelFundo.setMaximumSize(new java.awt.Dimension(800, 600));
+        jpanelFundo.setPreferredSize(new java.awt.Dimension(800, 600));
+        jpanelFundo.setRequestFocusEnabled(false);
 
         jscrollTabela.setViewportView(tableTabela);
 
@@ -80,7 +83,7 @@ public class TelaPesquisarProjeto extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(btnProcurar))
                             .addComponent(jscrollTabela, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 616, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(91, Short.MAX_VALUE))
+                .addContainerGap(81, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpanelFundoLayout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(txtTitulo)
@@ -89,7 +92,7 @@ public class TelaPesquisarProjeto extends javax.swing.JFrame {
         jpanelFundoLayout.setVerticalGroup(
             jpanelFundoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpanelFundoLayout.createSequentialGroup()
-                .addContainerGap(17, Short.MAX_VALUE)
+                .addContainerGap(19, Short.MAX_VALUE)
                 .addComponent(txtTitulo)
                 .addGap(18, 18, 18)
                 .addGroup(jpanelFundoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
