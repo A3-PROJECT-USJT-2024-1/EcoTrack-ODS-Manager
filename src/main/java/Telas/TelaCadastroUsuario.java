@@ -35,13 +35,11 @@ public class TelaCadastroUsuario extends javax.swing.JFrame {
         txtTelefone = new javax.swing.JLabel();
         txtEmail = new javax.swing.JLabel();
         txtSenha = new javax.swing.JLabel();
-        txtConfirmaSenha = new javax.swing.JLabel();
         txtfieldTelefone = new javax.swing.JTextField();
         txtfielUsuario = new javax.swing.JTextField();
         txtfielNome = new javax.swing.JTextField();
         txtfieldEmail = new javax.swing.JTextField();
         passfieldSenha = new javax.swing.JPasswordField();
-        passfieldConfirmaSenha = new javax.swing.JPasswordField();
         btnConcluido = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
 
@@ -49,33 +47,30 @@ public class TelaCadastroUsuario extends javax.swing.JFrame {
 
         panelFundo.setBackground(new java.awt.Color(169, 172, 200));
 
-        txtCadastro.setFont(new java.awt.Font("Gliker", 1, 48)); // NOI18N
+        txtCadastro.setFont(new java.awt.Font("Gliker", 1, 42)); // NOI18N
         txtCadastro.setForeground(new java.awt.Color(255, 255, 255));
+        txtCadastro.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         txtCadastro.setText("Cadastro de Usuário");
 
-        txtUsuario.setFont(new java.awt.Font("Gliker", 1, 36)); // NOI18N
+        txtUsuario.setFont(new java.awt.Font("Gliker", 1, 24)); // NOI18N
         txtUsuario.setForeground(new java.awt.Color(255, 255, 255));
         txtUsuario.setText("Usuário:");
 
-        txtNome.setFont(new java.awt.Font("Gliker", 1, 36)); // NOI18N
+        txtNome.setFont(new java.awt.Font("Gliker", 1, 24)); // NOI18N
         txtNome.setForeground(new java.awt.Color(255, 255, 255));
         txtNome.setText("Nome:");
 
-        txtTelefone.setFont(new java.awt.Font("Gliker", 1, 36)); // NOI18N
+        txtTelefone.setFont(new java.awt.Font("Gliker", 1, 24)); // NOI18N
         txtTelefone.setForeground(new java.awt.Color(255, 255, 255));
         txtTelefone.setText("Telefone:");
 
-        txtEmail.setFont(new java.awt.Font("Gliker", 1, 36)); // NOI18N
+        txtEmail.setFont(new java.awt.Font("Gliker", 1, 24)); // NOI18N
         txtEmail.setForeground(new java.awt.Color(255, 255, 255));
         txtEmail.setText("Email:");
 
-        txtSenha.setFont(new java.awt.Font("Gliker", 1, 36)); // NOI18N
+        txtSenha.setFont(new java.awt.Font("Gliker", 1, 24)); // NOI18N
         txtSenha.setForeground(new java.awt.Color(255, 255, 255));
         txtSenha.setText("Senha:");
-
-        txtConfirmaSenha.setFont(new java.awt.Font("Gliker", 1, 36)); // NOI18N
-        txtConfirmaSenha.setForeground(new java.awt.Color(255, 255, 255));
-        txtConfirmaSenha.setText("Confirmar Senha:");
 
         txtfielUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -89,7 +84,7 @@ public class TelaCadastroUsuario extends javax.swing.JFrame {
             }
         });
 
-        btnConcluido.setFont(new java.awt.Font("Gliker", 0, 12)); // NOI18N
+        btnConcluido.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         btnConcluido.setText("Concluído");
         btnConcluido.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -97,7 +92,7 @@ public class TelaCadastroUsuario extends javax.swing.JFrame {
             }
         });
 
-        jButton2.setFont(new java.awt.Font("Gliker", 0, 12)); // NOI18N
+        jButton2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jButton2.setText("Cancelar");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -109,87 +104,75 @@ public class TelaCadastroUsuario extends javax.swing.JFrame {
         panelFundo.setLayout(panelFundoLayout);
         panelFundoLayout.setHorizontalGroup(
             panelFundoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelFundoLayout.createSequentialGroup()
-                .addGroup(panelFundoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panelFundoLayout.createSequentialGroup()
-                        .addGap(100, 100, 100)
-                        .addGroup(panelFundoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelFundoLayout.createSequentialGroup()
-                                .addComponent(txtNome)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(txtfielNome))
-                            .addGroup(panelFundoLayout.createSequentialGroup()
-                                .addComponent(txtTelefone)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtfieldTelefone))
-                            .addGroup(panelFundoLayout.createSequentialGroup()
-                                .addComponent(txtConfirmaSenha)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(passfieldConfirmaSenha))
-                            .addGroup(panelFundoLayout.createSequentialGroup()
-                                .addComponent(txtUsuario)
-                                .addGap(5, 5, 5)
-                                .addComponent(txtfielUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 455, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(panelFundoLayout.createSequentialGroup()
-                                .addComponent(txtSenha)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(passfieldSenha))
-                            .addGroup(panelFundoLayout.createSequentialGroup()
-                                .addComponent(txtEmail)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtfieldEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 495, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(panelFundoLayout.createSequentialGroup()
-                        .addGap(246, 246, 246)
-                        .addComponent(btnConcluido)
-                        .addGap(145, 145, 145)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(92, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelFundoLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(txtCadastro, javax.swing.GroupLayout.PREFERRED_SIZE, 578, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(80, 80, 80))
+                .addContainerGap(118, Short.MAX_VALUE)
+                .addComponent(txtCadastro, javax.swing.GroupLayout.PREFERRED_SIZE, 569, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(113, 113, 113))
+            .addGroup(panelFundoLayout.createSequentialGroup()
+                .addGap(100, 100, 100)
+                .addGroup(panelFundoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelFundoLayout.createSequentialGroup()
+                        .addGap(114, 114, 114)
+                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 211, Short.MAX_VALUE)
+                        .addComponent(btnConcluido, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(118, 118, 118))
+                    .addComponent(txtfielUsuario)
+                    .addComponent(txtfielNome)
+                    .addComponent(txtSenha)
+                    .addComponent(txtTelefone)
+                    .addComponent(txtEmail)
+                    .addComponent(txtUsuario)
+                    .addComponent(txtNome)
+                    .addComponent(txtfieldTelefone)
+                    .addComponent(txtfieldEmail)
+                    .addComponent(passfieldSenha))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         panelFundoLayout.setVerticalGroup(
             panelFundoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelFundoLayout.createSequentialGroup()
-                .addGap(38, 38, 38)
-                .addComponent(txtCadastro)
-                .addGap(46, 46, 46)
+                .addGap(14, 14, 14)
+                .addComponent(txtCadastro, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(28, 28, 28)
+                .addComponent(txtUsuario)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtfielUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(txtNome)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtfielNome, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(txtTelefone)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtfieldTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(txtEmail)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtfieldEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(txtSenha)
                 .addGroup(panelFundoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtUsuario, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(txtfielUsuario, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(panelFundoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(txtNome)
-                    .addComponent(txtfielNome, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(panelFundoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(txtfieldTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtTelefone))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(panelFundoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(txtEmail)
-                    .addComponent(txtfieldEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 7, Short.MAX_VALUE)
-                .addGroup(panelFundoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtSenha, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(passfieldSenha, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(panelFundoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtConfirmaSenha)
-                    .addComponent(passfieldConfirmaSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(34, 34, 34)
-                .addGroup(panelFundoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnConcluido, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(92, 92, 92))
+                    .addGroup(panelFundoLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(passfieldSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(46, 114, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelFundoLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(panelFundoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btnConcluido, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(36, 36, 36))))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelFundo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(panelFundo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -202,6 +185,7 @@ public class TelaCadastroUsuario extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
+        this.dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void btnConcluidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConcluidoActionPerformed
@@ -255,10 +239,8 @@ public class TelaCadastroUsuario extends javax.swing.JFrame {
     private javax.swing.JButton btnConcluido;
     private javax.swing.JButton jButton2;
     private javax.swing.JPanel panelFundo;
-    private javax.swing.JPasswordField passfieldConfirmaSenha;
     private javax.swing.JPasswordField passfieldSenha;
     private javax.swing.JLabel txtCadastro;
-    private javax.swing.JLabel txtConfirmaSenha;
     private javax.swing.JLabel txtEmail;
     private javax.swing.JLabel txtNome;
     private javax.swing.JLabel txtSenha;

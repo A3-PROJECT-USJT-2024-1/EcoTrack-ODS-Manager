@@ -52,6 +52,7 @@ public class TelaGerenciaUsuario extends javax.swing.JFrame {
         setTitle("ECO Track - Gerenciar Usuário");
         setResizable(false);
 
+        jPanel1.setBackground(new java.awt.Color(169, 172, 200));
         jPanel1.setMaximumSize(new java.awt.Dimension(800, 600));
         jPanel1.setPreferredSize(new java.awt.Dimension(800, 600));
 
@@ -85,6 +86,7 @@ public class TelaGerenciaUsuario extends javax.swing.JFrame {
             }
         });
 
+        ComboBoxPrivilegios.setForeground(new java.awt.Color(255, 255, 255));
         ComboBoxPrivilegios.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecionar", "Usuario Comum", "Administrador", "Desenvolvedor" }));
         ComboBoxPrivilegios.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -92,35 +94,45 @@ public class TelaGerenciaUsuario extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setFont(new java.awt.Font("Liberation Sans", 1, 24)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Gliker", 1, 42)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Gerenciar Usuário");
 
         jLabel2.setFont(new java.awt.Font("Liberation Sans", 3, 15)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Usuário:");
 
         jLabel3.setFont(new java.awt.Font("Liberation Sans", 3, 15)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Nome:");
 
         jLabel4.setFont(new java.awt.Font("Liberation Sans", 3, 15)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("E-mail:");
 
         jLabel5.setFont(new java.awt.Font("Liberation Sans", 3, 15)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Telefone:");
 
         jLabel6.setFont(new java.awt.Font("Liberation Sans", 3, 15)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Senha:");
 
+        passwordFieldSenha.setForeground(new java.awt.Color(255, 255, 255));
         passwordFieldSenha.setText("jPasswordField1");
 
         jLabel8.setFont(new java.awt.Font("Liberation Sans", 3, 15)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("Privilégios:");
 
+        textFieldUsuario.setForeground(new java.awt.Color(255, 255, 255));
         textFieldUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 textFieldUsuarioActionPerformed(evt);
             }
         });
 
+        textFieldTelefone.setForeground(new java.awt.Color(255, 255, 255));
         textFieldTelefone.setMaximumSize(new java.awt.Dimension(570, 570));
         textFieldTelefone.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -128,6 +140,7 @@ public class TelaGerenciaUsuario extends javax.swing.JFrame {
             }
         });
 
+        textFieldNome.setForeground(new java.awt.Color(255, 255, 255));
         textFieldNome.setMaximumSize(new java.awt.Dimension(570, 570));
         textFieldNome.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -135,6 +148,7 @@ public class TelaGerenciaUsuario extends javax.swing.JFrame {
             }
         });
 
+        textFieldEmail.setForeground(new java.awt.Color(255, 255, 255));
         textFieldEmail.setMaximumSize(new java.awt.Dimension(570, 570));
         textFieldEmail.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -188,17 +202,18 @@ public class TelaGerenciaUsuario extends javax.swing.JFrame {
                         .addComponent(pesquisarUsuarioButton, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(43, 43, 43))))
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(308, 308, 308)
-                .addComponent(concluidoButton)
-                .addGap(18, 18, 18)
-                .addComponent(salvarButton, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(lixeiraButton, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(308, 308, 308)
+                        .addComponent(concluidoButton)
+                        .addGap(18, 18, 18)
+                        .addComponent(salvarButton, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(lixeiraButton, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(205, 205, 205)
+                        .addComponent(jLabel1)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(285, 285, 285))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -209,9 +224,9 @@ public class TelaGerenciaUsuario extends javax.swing.JFrame {
                         .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(14, 14, 14)
+                        .addGap(33, 33, 33)
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 72, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 53, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(textFieldUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)

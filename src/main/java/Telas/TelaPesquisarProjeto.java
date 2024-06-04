@@ -45,20 +45,20 @@ public class TelaPesquisarProjeto extends javax.swing.JFrame {
 
         jscrollTabela.setViewportView(tableTabela);
 
-        btnConcluido.setFont(new java.awt.Font("Gliker", 0, 12)); // NOI18N
+        btnConcluido.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         btnConcluido.setText("Concluído");
 
-        btnCancelar.setFont(new java.awt.Font("Gliker", 0, 12)); // NOI18N
+        btnCancelar.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         btnCancelar.setText("Cancelar");
 
-        txtNomeProjeto.setFont(new java.awt.Font("Gliker", 0, 12)); // NOI18N
+        txtNomeProjeto.setFont(new java.awt.Font("Gliker", 1, 24)); // NOI18N
         txtNomeProjeto.setForeground(new java.awt.Color(255, 255, 255));
         txtNomeProjeto.setText("Nome do Projeto:");
 
-        btnProcurar.setFont(new java.awt.Font("Gliker", 0, 12)); // NOI18N
+        btnProcurar.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         btnProcurar.setText("Procurar");
 
-        txtTitulo.setFont(new java.awt.Font("Gliker", 1, 48)); // NOI18N
+        txtTitulo.setFont(new java.awt.Font("Gliker", 1, 42)); // NOI18N
         txtTitulo.setForeground(new java.awt.Color(255, 255, 255));
         txtTitulo.setText("Procurar Projeto");
 
@@ -67,45 +67,47 @@ public class TelaPesquisarProjeto extends javax.swing.JFrame {
         jpanelFundoLayout.setHorizontalGroup(
             jpanelFundoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jpanelFundoLayout.createSequentialGroup()
+                .addGap(92, 92, 92)
                 .addGroup(jpanelFundoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jscrollTabela, javax.swing.GroupLayout.DEFAULT_SIZE, 627, Short.MAX_VALUE)
                     .addGroup(jpanelFundoLayout.createSequentialGroup()
-                        .addGap(255, 255, 255)
-                        .addComponent(btnConcluido)
-                        .addGap(110, 110, 110)
-                        .addComponent(btnCancelar))
-                    .addGroup(jpanelFundoLayout.createSequentialGroup()
-                        .addGap(92, 92, 92)
-                        .addGroup(jpanelFundoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jpanelFundoLayout.createSequentialGroup()
-                                .addComponent(txtNomeProjeto)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtfieldNomeProjeto, javax.swing.GroupLayout.PREFERRED_SIZE, 422, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btnProcurar))
-                            .addComponent(jscrollTabela, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 616, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(81, Short.MAX_VALUE))
+                        .addGroup(jpanelFundoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jpanelFundoLayout.createSequentialGroup()
+                                .addComponent(txtNomeProjeto, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addComponent(txtfieldNomeProjeto))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnProcurar)))
+                .addGap(81, 81, 81))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpanelFundoLayout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(txtTitulo)
-                .addGap(186, 186, 186))
+                .addGap(194, 194, 194))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpanelFundoLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(132, 132, 132)
+                .addComponent(btnConcluido, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(221, 221, 221))
         );
         jpanelFundoLayout.setVerticalGroup(
             jpanelFundoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpanelFundoLayout.createSequentialGroup()
-                .addContainerGap(19, Short.MAX_VALUE)
-                .addComponent(txtTitulo)
-                .addGap(18, 18, 18)
+                .addGap(14, 14, 14)
+                .addComponent(txtTitulo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(24, 24, 24)
+                .addComponent(txtNomeProjeto, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jpanelFundoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtNomeProjeto)
-                    .addComponent(txtfieldNomeProjeto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnProcurar))
-                .addGap(30, 30, 30)
-                .addComponent(jscrollTabela, javax.swing.GroupLayout.PREFERRED_SIZE, 339, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(50, 50, 50)
+                    .addComponent(txtfieldNomeProjeto, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnProcurar, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(38, 38, 38)
+                .addComponent(jscrollTabela, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(55, 55, 55)
                 .addGroup(jpanelFundoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnConcluido)
-                    .addComponent(btnCancelar))
-                .addGap(42, 42, 42))
+                    .addComponent(btnConcluido, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(56, 56, 56))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -116,7 +118,7 @@ public class TelaPesquisarProjeto extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jpanelFundo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jpanelFundo, javax.swing.GroupLayout.DEFAULT_SIZE, 615, Short.MAX_VALUE)
         );
 
         pack();
