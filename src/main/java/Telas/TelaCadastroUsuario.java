@@ -199,7 +199,7 @@ public class TelaCadastroUsuario extends javax.swing.JFrame {
     String telefone = txtfieldTelefone.getText();
     String loginUsuario = txtfielUsuario.getText();
     String senha = new String(passfieldSenha.getPassword());
-    String privilegio = "Usuario"; // Alterado para "usuario"
+    String privilegio = "Usuario"; 
 
     UsuarioDAO usuarioDAO = new UsuarioDAO();
     usuarioDAO.inserirUsuario(loginUsuario, senha, nome, telefone, email, privilegio);

@@ -4,6 +4,9 @@
  */
 package Telas;
 
+import DAO.OdsDAO;
+import java.util.ArrayList;
+
 /**
  *
  * @author May
@@ -74,7 +77,16 @@ public class TelaCadastroProjeto extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jTextArea1);
 
         cmb_ODS.setForeground(new java.awt.Color(255, 255, 255));
-        cmb_ODS.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cmb_ODS.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] {}));
+        cmb_ODS.addAncestorListener(new javax.swing.event.AncestorListener() {
+            public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
+                cmb_ODSAncestorAdded(evt);
+            }
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
+            }
+            public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
+            }
+        });
         cmb_ODS.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cmb_ODSActionPerformed(evt);
@@ -107,23 +119,22 @@ public class TelaCadastroProjeto extends javax.swing.JFrame {
                 .addContainerGap(127, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(115, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 596, Short.MAX_VALUE)
-                            .addComponent(lbl_ODS, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lbl_Nome, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txi_NomeProjeto, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lbl_Descricao, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lbl_Responsavel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txi_UsuarioResponsavel, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(cmb_ODS, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(89, 89, 89))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(219, 219, 219)
-                        .addComponent(btnCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(186, 186, 186))))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 596, Short.MAX_VALUE)
+                    .addComponent(lbl_ODS, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lbl_Nome, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txi_NomeProjeto, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lbl_Descricao, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lbl_Responsavel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txi_UsuarioResponsavel, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(cmb_ODS, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(89, 89, 89))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(206, 206, 206)
+                .addComponent(btnCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(167, 167, 167))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -173,18 +184,29 @@ public class TelaCadastroProjeto extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+            
     private void txi_NomeProjetoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txi_NomeProjetoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txi_NomeProjetoActionPerformed
 
     private void cmb_ODSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmb_ODSActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cmb_ODSActionPerformed
 
+        }//GEN-LAST:event_cmb_ODSActionPerformed
+    
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
         // TODO add your handling code here:
         this.dispose();
     }//GEN-LAST:event_btnCancelarActionPerformed
+
+    private void cmb_ODSAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_cmb_ODSAncestorAdded
+        OdsDAO odsDAO = new OdsDAO();
+        ArrayList<String> nomesODS = odsDAO.getNomesODS();
+        System.out.println("ODS recuperadas do banco de dados: " + nomesODS);
+        cmb_ODS.removeAllItems(); // Remove qualquer item existente
+        for (String nomeODS : nomesODS) {
+            System.out.println("Adicionando ODS na combobox: " + nomeODS);
+        cmb_ODS.addItem(nomeODS);}
+    }//GEN-LAST:event_cmb_ODSAncestorAdded
 
     /**
      * @param args the command line arguments

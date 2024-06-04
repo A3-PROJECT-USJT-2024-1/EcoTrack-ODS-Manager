@@ -58,27 +58,24 @@
               </Group>
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace pref="115" max="32767" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="1" attributes="0">
-                          <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                              <Component id="jScrollPane1" alignment="1" pref="596" max="32767" attributes="0"/>
-                              <Component id="lbl_ODS" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="lbl_Nome" alignment="0" min="-2" pref="123" max="-2" attributes="0"/>
-                              <Component id="txi_NomeProjeto" alignment="0" max="32767" attributes="0"/>
-                              <Component id="lbl_Descricao" alignment="0" min="-2" pref="172" max="-2" attributes="0"/>
-                              <Component id="lbl_Responsavel" alignment="0" min="-2" pref="208" max="-2" attributes="0"/>
-                              <Component id="txi_UsuarioResponsavel" alignment="0" max="32767" attributes="0"/>
-                              <Component id="cmb_ODS" alignment="0" max="32767" attributes="0"/>
-                          </Group>
-                          <EmptySpace min="-2" pref="89" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="1" attributes="0">
-                          <Component id="btnCancelar" min="-2" pref="101" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="219" max="-2" attributes="0"/>
-                          <Component id="btnCadastrar" min="-2" pref="100" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="186" max="-2" attributes="0"/>
-                      </Group>
+                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                      <Component id="jScrollPane1" alignment="1" pref="596" max="32767" attributes="0"/>
+                      <Component id="lbl_ODS" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="lbl_Nome" alignment="0" min="-2" pref="123" max="-2" attributes="0"/>
+                      <Component id="txi_NomeProjeto" alignment="0" max="32767" attributes="0"/>
+                      <Component id="lbl_Descricao" alignment="0" min="-2" pref="172" max="-2" attributes="0"/>
+                      <Component id="lbl_Responsavel" alignment="0" min="-2" pref="208" max="-2" attributes="0"/>
+                      <Component id="txi_UsuarioResponsavel" alignment="0" max="32767" attributes="0"/>
+                      <Component id="cmb_ODS" alignment="0" max="32767" attributes="0"/>
                   </Group>
+                  <EmptySpace min="-2" pref="89" max="-2" attributes="0"/>
+              </Group>
+              <Group type="102" alignment="1" attributes="0">
+                  <EmptySpace min="-2" pref="206" max="-2" attributes="0"/>
+                  <Component id="btnCadastrar" min="-2" pref="100" max="-2" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
+                  <Component id="btnCancelar" min="-2" pref="101" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="167" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -190,16 +187,12 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
-            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="4">
-                <StringItem index="0" value="Item 1"/>
-                <StringItem index="1" value="Item 2"/>
-                <StringItem index="2" value="Item 3"/>
-                <StringItem index="3" value="Item 4"/>
-              </StringArray>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+              <Connection code="new javax.swing.DefaultComboBoxModel&lt;&gt;(new String[] {})" type="code"/>
             </Property>
           </Properties>
           <Events>
+            <EventHandler event="ancestorAdded" listener="javax.swing.event.AncestorListener" parameters="javax.swing.event.AncestorEvent" handler="cmb_ODSAncestorAdded"/>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cmb_ODSActionPerformed"/>
           </Events>
           <AuxValues>

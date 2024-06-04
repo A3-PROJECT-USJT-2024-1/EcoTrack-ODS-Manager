@@ -329,13 +329,17 @@ public class TelaProjetoUsuario extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void SairButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SairButtonActionPerformed
-        // TODO add your handling code here:
+       this.dispose();
+       TelaLogin telaLogin = new TelaLogin();
+       telaLogin.setVisible(true);
         
     }//GEN-LAST:event_SairButtonActionPerformed
 
     private void CriarProjetosButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CriarProjetosButtonActionPerformed
         // TODO add your handling code here:
-        new TelaGerenciaUsuario().setVisible(true);
+       TelaCadastroProjeto telaCadastraProjeto = new TelaCadastroProjeto();
+       this.dispose();
+       telaCadastraProjeto.setVisible(true);
     }//GEN-LAST:event_CriarProjetosButtonActionPerformed
 
     private void ProcurarProjetoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ProcurarProjetoButtonActionPerformed

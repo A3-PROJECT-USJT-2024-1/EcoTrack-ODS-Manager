@@ -11,7 +11,8 @@ public class OdsDAO {
     private Connection conexao;
 
     public OdsDAO() {
-        this.conexao = ConnectionFactory.getConnection();
+        ConnectionFactory factory = new ConnectionFactory();
+        this.conexao = factory.obtemConexao();
     }
 
     public ArrayList<String> getNomesODS() {

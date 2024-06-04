@@ -19,7 +19,8 @@ public class ProjetoDAO {
     private Connection conexao;
 
     public ProjetoDAO() {
-        this.conexao = ConnectionFactory.getConnection();
+        ConnectionFactory factory = new ConnectionFactory();
+        this.conexao = factory.obtemConexao();;
     }
 
     public void cadastrarProjeto(Projeto projeto) {
