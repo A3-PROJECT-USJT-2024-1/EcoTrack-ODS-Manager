@@ -4,7 +4,9 @@
  */
 package Telas;
 
+import DAO.UsuarioDAO;
 import Model.Usuario;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -184,12 +186,32 @@ public class TelaCadastroUsuario extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-        this.dispose();
+
+    TelaLogin telaLogin = new TelaLogin();
+    telaLogin.setVisible(true);
+    this.dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void btnConcluidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConcluidoActionPerformed
-        // TODO add your handling code here:
+
+    String nome = txtfielNome.getText();
+    String email = txtfieldEmail.getText();
+    String telefone = txtfieldTelefone.getText();
+    String loginUsuario = txtfielUsuario.getText();
+    String senha = new String(passfieldSenha.getPassword());
+    String privilegio = "Usuario"; // Alterado para "usuario"
+
+    UsuarioDAO usuarioDAO = new UsuarioDAO();
+    usuarioDAO.inserirUsuario(loginUsuario, senha, nome, telefone, email, privilegio);
+
+   JOptionPane.showMessageDialog(this, "Usuário cadastrado com sucesso!", "Sucesso", JOptionPane.INFORMATION_MESSAGE);
+
+    // Volta para a tela de login
+    TelaLogin telaLogin = new TelaLogin();
+    telaLogin.setVisible(true);
+
+    this.dispose();
+           
     }//GEN-LAST:event_btnConcluidoActionPerformed
 
     private void txtfieldEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtfieldEmailActionPerformed

@@ -28,11 +28,11 @@ public class TelaProjetoUsuario extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
-        ImgUsuario = new javax.swing.JLabel();
         GerenciarUsuariosButton = new javax.swing.JButton();
         GerenciarProjetosButton = new javax.swing.JButton();
         ProcurarProjetoButton = new javax.swing.JButton();
         SairButton = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jPanel3 = new javax.swing.JPanel();
         CurtirButtonW = new javax.swing.JButton();
@@ -58,8 +58,8 @@ public class TelaProjetoUsuario extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(169, 172, 200));
 
-        ImgUsuario.setBorder(javax.swing.BorderFactory.createTitledBorder("Usuario"));
-
+        GerenciarUsuariosButton.setFont(new java.awt.Font("Gliker", 0, 12)); // NOI18N
+        GerenciarUsuariosButton.setForeground(new java.awt.Color(255, 255, 255));
         GerenciarUsuariosButton.setText("Gerenciar Usuários");
         GerenciarUsuariosButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -67,6 +67,8 @@ public class TelaProjetoUsuario extends javax.swing.JFrame {
             }
         });
 
+        GerenciarProjetosButton.setFont(new java.awt.Font("Gliker", 0, 12)); // NOI18N
+        GerenciarProjetosButton.setForeground(new java.awt.Color(255, 255, 255));
         GerenciarProjetosButton.setText("Gerenciar Projetos");
         GerenciarProjetosButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -74,6 +76,8 @@ public class TelaProjetoUsuario extends javax.swing.JFrame {
             }
         });
 
+        ProcurarProjetoButton.setFont(new java.awt.Font("Gliker", 0, 12)); // NOI18N
+        ProcurarProjetoButton.setForeground(new java.awt.Color(255, 255, 255));
         ProcurarProjetoButton.setText("Procurar Projeto");
         ProcurarProjetoButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -81,6 +85,8 @@ public class TelaProjetoUsuario extends javax.swing.JFrame {
             }
         });
 
+        SairButton.setFont(new java.awt.Font("Gliker", 0, 12)); // NOI18N
+        SairButton.setForeground(new java.awt.Color(255, 255, 255));
         SairButton.setText("Sair");
         SairButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -88,27 +94,33 @@ public class TelaProjetoUsuario extends javax.swing.JFrame {
             }
         });
 
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/UsuarioPNG (1).png"))); // NOI18N
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                        .addComponent(GerenciarProjetosButton, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(ProcurarProjetoButton, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(SairButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(ImgUsuario, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(GerenciarUsuariosButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                                .addComponent(GerenciarProjetosButton, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(ProcurarProjetoButton, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(SairButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(GerenciarUsuariosButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(10, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(ImgUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(69, 69, 69)
+                .addGap(43, 43, 43)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(50, 50, 50)
                 .addComponent(GerenciarUsuariosButton, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(ProcurarProjetoButton, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -124,6 +136,8 @@ public class TelaProjetoUsuario extends javax.swing.JFrame {
 
         jPanel3.setPreferredSize(new java.awt.Dimension(590, 840));
 
+        CurtirButtonW.setFont(new java.awt.Font("Gliker", 0, 12)); // NOI18N
+        CurtirButtonW.setForeground(new java.awt.Color(255, 255, 255));
         CurtirButtonW.setText("Curtir");
         CurtirButtonW.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -131,6 +145,8 @@ public class TelaProjetoUsuario extends javax.swing.JFrame {
             }
         });
 
+        DetalhesDoProjetoButtonW.setFont(new java.awt.Font("Gliker", 0, 12)); // NOI18N
+        DetalhesDoProjetoButtonW.setForeground(new java.awt.Color(255, 255, 255));
         DetalhesDoProjetoButtonW.setText("Detalhes do Projetos");
         DetalhesDoProjetoButtonW.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -138,6 +154,8 @@ public class TelaProjetoUsuario extends javax.swing.JFrame {
             }
         });
 
+        DetalhesDoProjetoX.setFont(new java.awt.Font("Gliker", 0, 12)); // NOI18N
+        DetalhesDoProjetoX.setForeground(new java.awt.Color(255, 255, 255));
         DetalhesDoProjetoX.setText("Detalhes do Projeto");
         DetalhesDoProjetoX.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -153,6 +171,9 @@ public class TelaProjetoUsuario extends javax.swing.JFrame {
         TextAreaX.setRows(5);
         jScrollPane3.setViewportView(TextAreaX);
 
+        TextProjetoW.setEditable(false);
+        TextProjetoW.setFont(new java.awt.Font("Gliker", 0, 12)); // NOI18N
+        TextProjetoW.setForeground(new java.awt.Color(255, 255, 255));
         TextProjetoW.setText("Projeto W");
         TextProjetoW.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -160,6 +181,9 @@ public class TelaProjetoUsuario extends javax.swing.JFrame {
             }
         });
 
+        TextProjetoX.setEditable(false);
+        TextProjetoX.setFont(new java.awt.Font("Gliker", 0, 12)); // NOI18N
+        TextProjetoX.setForeground(new java.awt.Color(255, 255, 255));
         TextProjetoX.setText("Projeto X");
         TextProjetoX.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -167,6 +191,8 @@ public class TelaProjetoUsuario extends javax.swing.JFrame {
             }
         });
 
+        CurtirButtonX.setFont(new java.awt.Font("Gliker", 0, 12)); // NOI18N
+        CurtirButtonX.setForeground(new java.awt.Color(255, 255, 255));
         CurtirButtonX.setText("Curtir");
         CurtirButtonX.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -174,6 +200,9 @@ public class TelaProjetoUsuario extends javax.swing.JFrame {
             }
         });
 
+        TextProjetoZ.setEditable(false);
+        TextProjetoZ.setFont(new java.awt.Font("Gliker", 0, 12)); // NOI18N
+        TextProjetoZ.setForeground(new java.awt.Color(255, 255, 255));
         TextProjetoZ.setText("Projeto Z");
         TextProjetoZ.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -181,6 +210,8 @@ public class TelaProjetoUsuario extends javax.swing.JFrame {
             }
         });
 
+        DetalhesDoProjetoButtonZ.setFont(new java.awt.Font("Gliker", 0, 12)); // NOI18N
+        DetalhesDoProjetoButtonZ.setForeground(new java.awt.Color(255, 255, 255));
         DetalhesDoProjetoButtonZ.setText("Detalhes do Projeto");
         DetalhesDoProjetoButtonZ.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -188,6 +219,8 @@ public class TelaProjetoUsuario extends javax.swing.JFrame {
             }
         });
 
+        CurtirButtonZ.setFont(new java.awt.Font("Gliker", 0, 12)); // NOI18N
+        CurtirButtonZ.setForeground(new java.awt.Color(255, 255, 255));
         CurtirButtonZ.setText("Curtir");
         CurtirButtonZ.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -272,9 +305,12 @@ public class TelaProjetoUsuario extends javax.swing.JFrame {
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(10, Short.MAX_VALUE))
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -285,9 +321,7 @@ public class TelaProjetoUsuario extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 603, Short.MAX_VALUE)
         );
 
         pack();
@@ -401,7 +435,6 @@ public class TelaProjetoUsuario extends javax.swing.JFrame {
     private javax.swing.JButton DetalhesDoProjetoX;
     private javax.swing.JButton GerenciarProjetosButton;
     private javax.swing.JButton GerenciarUsuariosButton;
-    private javax.swing.JLabel ImgUsuario;
     private javax.swing.JButton ProcurarProjetoButton;
     private javax.swing.JButton SairButton;
     private javax.swing.JTextArea TextAreaW;
@@ -410,6 +443,7 @@ public class TelaProjetoUsuario extends javax.swing.JFrame {
     private javax.swing.JTextField TextProjetoW;
     private javax.swing.JTextField TextProjetoX;
     private javax.swing.JTextField TextProjetoZ;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;

@@ -9,7 +9,7 @@ import java.sql.SQLException;
 
 public class UsuarioDAO {
 
-    public void inserirUsuario(String loginUsuario, String senha, String nome, String telefone, String email, int privilegio) {
+    public void inserirUsuario(String loginUsuario, String senha, String nome, String telefone, String email, String privilegio) {
         String sql = "INSERT INTO tb_Usuario(login_Usuario, senha, nome, telefone, email, privilegio) VALUES(?, ?, ?, ?, ?, ?)";
         ConnectionFactory factory = new ConnectionFactory();
         
@@ -21,7 +21,7 @@ public class UsuarioDAO {
             ps.setString(3, nome);
             ps.setString(4, telefone);
             ps.setString(5, email);
-            ps.setInt(6, privilegio);
+            ps.setString(6, privilegio);
 
             ps.execute();
         } catch (SQLException e) {
