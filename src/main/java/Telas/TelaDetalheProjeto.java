@@ -15,6 +15,7 @@ public class TelaDetalheProjeto extends javax.swing.JFrame {
      */
     public TelaDetalheProjeto() {
         initComponents();
+        setLocationRelativeTo(null);
     }
 
     /**
@@ -97,9 +98,9 @@ public class TelaDetalheProjeto extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(btn_Curtir, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(193, 193, 193)
+                .addGap(162, 162, 162)
                 .addComponent(btn_Concluido, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(192, 192, 192))
+                .addGap(223, 223, 223))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
