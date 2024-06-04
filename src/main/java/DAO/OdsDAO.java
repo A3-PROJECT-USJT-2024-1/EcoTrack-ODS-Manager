@@ -1,13 +1,33 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package DAO;
+import Connection.ConnectionFactory;
+import Model.Ods;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
 
-/**
- *
- * @author 12101863
- */
 public class OdsDAO {
-    
+    private Connection conexao;
+
+    public OdsDAO() {
+        this.conexao = ConnectionFactory.getConnection();
+    }
+
+    public ArrayList<String> getNomesODS() {
+        ArrayList<String> nomesODS = new ArrayList<>();
+        String sql = "SELECT nome_Ods FROM tb_Ods";
+        try {
+            PreparedStatement stmt = conexao.prepareStatement(sql);
+            ResultSet rs = stmt.executeQuery();
+            while (rs.next()) {
+                nomesODS.add(rs.getString("nome_Ods"));
+            }
+            stmt.close();
+            rs.close();
+        } catch (SQLException e) {
+            System.err.println("Erro ao buscar nomes de ODS: " + e.getMessage());
+        }
+        return nomesODS;
+    }
 }

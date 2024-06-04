@@ -305,8 +305,9 @@ public class TelaGerenciaUsuario extends javax.swing.JFrame {
     }//GEN-LAST:event_textFieldEmailActionPerformed
 
     private void concluidoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_concluidoButtonActionPerformed
-        // TODO add your handling code here:
-        
+        this.dispose();    
+        TelaProjetoADM telaProjetoUsuario = new TelaProjetoADM();
+        telaProjetoUsuario.setVisible(true);
     }//GEN-LAST:event_concluidoButtonActionPerformed
 
     private void salvarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salvarButtonActionPerformed

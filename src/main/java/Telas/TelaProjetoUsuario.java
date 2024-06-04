@@ -28,7 +28,7 @@ public class TelaProjetoUsuario extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
-        GerenciarUsuariosButton = new javax.swing.JButton();
+        CriarProjetosButton = new javax.swing.JButton();
         GerenciarProjetosButton = new javax.swing.JButton();
         ProcurarProjetoButton = new javax.swing.JButton();
         SairButton = new javax.swing.JButton();
@@ -58,12 +58,12 @@ public class TelaProjetoUsuario extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(169, 172, 200));
 
-        GerenciarUsuariosButton.setFont(new java.awt.Font("Gliker", 0, 12)); // NOI18N
-        GerenciarUsuariosButton.setForeground(new java.awt.Color(255, 255, 255));
-        GerenciarUsuariosButton.setText("Gerenciar Usuários");
-        GerenciarUsuariosButton.addActionListener(new java.awt.event.ActionListener() {
+        CriarProjetosButton.setFont(new java.awt.Font("Gliker", 0, 12)); // NOI18N
+        CriarProjetosButton.setForeground(new java.awt.Color(255, 255, 255));
+        CriarProjetosButton.setText("Criar Projeto");
+        CriarProjetosButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                GerenciarUsuariosButtonActionPerformed(evt);
+                CriarProjetosButtonActionPerformed(evt);
             }
         });
 
@@ -109,7 +109,7 @@ public class TelaProjetoUsuario extends javax.swing.JFrame {
                                 .addComponent(GerenciarProjetosButton, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(ProcurarProjetoButton, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(SairButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(GerenciarUsuariosButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addComponent(CriarProjetosButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(18, 18, 18)
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -121,7 +121,7 @@ public class TelaProjetoUsuario extends javax.swing.JFrame {
                 .addGap(43, 43, 43)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(50, 50, 50)
-                .addComponent(GerenciarUsuariosButton, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(CriarProjetosButton, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(ProcurarProjetoButton, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -333,10 +333,10 @@ public class TelaProjetoUsuario extends javax.swing.JFrame {
         
     }//GEN-LAST:event_SairButtonActionPerformed
 
-    private void GerenciarUsuariosButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GerenciarUsuariosButtonActionPerformed
+    private void CriarProjetosButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CriarProjetosButtonActionPerformed
         // TODO add your handling code here:
         new TelaGerenciaUsuario().setVisible(true);
-    }//GEN-LAST:event_GerenciarUsuariosButtonActionPerformed
+    }//GEN-LAST:event_CriarProjetosButtonActionPerformed
 
     private void ProcurarProjetoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ProcurarProjetoButtonActionPerformed
         // TODO add your handling code here:
@@ -427,6 +427,7 @@ public class TelaProjetoUsuario extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton CriarProjetosButton;
     private javax.swing.JButton CurtirButtonW;
     private javax.swing.JButton CurtirButtonX;
     private javax.swing.JButton CurtirButtonZ;
@@ -434,7 +435,6 @@ public class TelaProjetoUsuario extends javax.swing.JFrame {
     private javax.swing.JButton DetalhesDoProjetoButtonZ;
     private javax.swing.JButton DetalhesDoProjetoX;
     private javax.swing.JButton GerenciarProjetosButton;
-    private javax.swing.JButton GerenciarUsuariosButton;
     private javax.swing.JButton ProcurarProjetoButton;
     private javax.swing.JButton SairButton;
     private javax.swing.JTextArea TextAreaW;

@@ -302,16 +302,19 @@ public class TelaProjetoADM extends javax.swing.JFrame {
     private void GerenciarUsuariosButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GerenciarUsuariosButtonActionPerformed
         // TODO add your handling code here:
         new TelaGerenciaUsuario().setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_GerenciarUsuariosButtonActionPerformed
 
     private void ProcurarProjetoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ProcurarProjetoButtonActionPerformed
         // TODO add your handling code here:
         new TelaPesquisarProjeto().setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_ProcurarProjetoButtonActionPerformed
 
     private void GerenciarProjetosButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GerenciarProjetosButtonActionPerformed
         // TODO add your handling code here:
         new TelaGerenciarProjetoo().setVisible(true);
+        this.dispose();
        
     }//GEN-LAST:event_GerenciarProjetosButtonActionPerformed
 
