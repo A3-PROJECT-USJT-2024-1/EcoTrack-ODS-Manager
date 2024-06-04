@@ -87,7 +87,7 @@ public class TelaGerenciaUsuario extends javax.swing.JFrame {
         });
 
         ComboBoxPrivilegios.setForeground(new java.awt.Color(255, 255, 255));
-        ComboBoxPrivilegios.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecionar", "Usuario Comum", "Administrador", "Desenvolvedor" }));
+        ComboBoxPrivilegios.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Usuario Comum", "Administrador" }));
         ComboBoxPrivilegios.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ComboBoxPrivilegiosActionPerformed(evt);
