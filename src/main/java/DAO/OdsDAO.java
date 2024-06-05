@@ -31,4 +31,23 @@ public class OdsDAO {
         }
         return nomesODS;
     }
-}
+        public int getIdByNome(String nomeOds) {
+        String query = "SELECT numero_Ods FROM tb_ods WHERE nome_Ods = ?";
+        int idOds = -1;
+
+        try (Connection connection = new ConnectionFactory().obtemConexao();
+             PreparedStatement stmt = connection.prepareStatement(query)) {
+
+            stmt.setString(1, nomeOds);
+            try (ResultSet rs = stmt.executeQuery()) {
+                if (rs.next()) {
+                    idOds = rs.getInt("numero_Ods");
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return idOds;
+    }
+    
+  }

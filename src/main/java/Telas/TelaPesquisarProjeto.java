@@ -4,6 +4,11 @@
  */
 package Telas;
 
+import DAO.ProjetoDAO;
+import Model.Projeto;
+import java.util.ArrayList;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author 12101863
@@ -30,7 +35,6 @@ public class TelaPesquisarProjeto extends javax.swing.JFrame {
         jscrollTabela = new javax.swing.JScrollPane();
         tableTabela = new javax.swing.JTable();
         btnConcluido = new javax.swing.JButton();
-        btnCancelar = new javax.swing.JButton();
         txtNomeProjeto = new javax.swing.JLabel();
         txtfieldNomeProjeto = new javax.swing.JTextField();
         btnProcurar = new javax.swing.JButton();
@@ -43,20 +47,49 @@ public class TelaPesquisarProjeto extends javax.swing.JFrame {
         jpanelFundo.setPreferredSize(new java.awt.Dimension(800, 600));
         jpanelFundo.setRequestFocusEnabled(false);
 
+        tableTabela.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "ID ", "Nome Projeto"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         jscrollTabela.setViewportView(tableTabela);
 
         btnConcluido.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         btnConcluido.setText("Concluído");
-
-        btnCancelar.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        btnCancelar.setText("Cancelar");
+        btnConcluido.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnConcluidoActionPerformed(evt);
+            }
+        });
 
         txtNomeProjeto.setFont(new java.awt.Font("Gliker", 1, 24)); // NOI18N
         txtNomeProjeto.setForeground(new java.awt.Color(255, 255, 255));
         txtNomeProjeto.setText("Nome do Projeto:");
 
+        txtfieldNomeProjeto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtfieldNomeProjetoActionPerformed(evt);
+            }
+        });
+
         btnProcurar.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         btnProcurar.setText("Procurar");
+        btnProcurar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnProcurarActionPerformed(evt);
+            }
+        });
 
         txtTitulo.setFont(new java.awt.Font("Gliker", 1, 42)); // NOI18N
         txtTitulo.setForeground(new java.awt.Color(255, 255, 255));
@@ -85,10 +118,8 @@ public class TelaPesquisarProjeto extends javax.swing.JFrame {
                 .addGap(194, 194, 194))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpanelFundoLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(132, 132, 132)
                 .addComponent(btnConcluido, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(221, 221, 221))
+                .addGap(347, 347, 347))
         );
         jpanelFundoLayout.setVerticalGroup(
             jpanelFundoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -103,11 +134,9 @@ public class TelaPesquisarProjeto extends javax.swing.JFrame {
                     .addComponent(btnProcurar, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(38, 38, 38)
                 .addComponent(jscrollTabela, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(55, 55, 55)
-                .addGroup(jpanelFundoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnConcluido, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(56, 56, 56))
+                .addGap(47, 47, 47)
+                .addComponent(btnConcluido, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(64, 64, 64))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -118,12 +147,39 @@ public class TelaPesquisarProjeto extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jpanelFundo, javax.swing.GroupLayout.DEFAULT_SIZE, 615, Short.MAX_VALUE)
+            .addComponent(jpanelFundo, javax.swing.GroupLayout.PREFERRED_SIZE, 615, Short.MAX_VALUE)
         );
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void txtfieldNomeProjetoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtfieldNomeProjetoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtfieldNomeProjetoActionPerformed
+
+    private void preencherTabela(ArrayList<Projeto> projetos) {
+    DefaultTableModel model = (DefaultTableModel) tableTabela.getModel();
+    model.setRowCount(0); // Limpa a tabela antes de adicionar novos dados
+
+    for (Projeto projeto : projetos) {
+        Object[] row = {projeto.getId(), projeto.getNome()};
+        model.addRow(row); // Adiciona uma nova linha à tabela com os dados do projeto
+    }
+}
+    private void btnProcurarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProcurarActionPerformed
+        String nomeParcial = txtfieldNomeProjeto.getText(); // Recuperando o texto do campo de texto
+        ProjetoDAO projetoDAO = new ProjetoDAO(); // Criando uma instância de ProjetoDAO
+        ArrayList<Projeto> projetos = projetoDAO.buscarProjetosPorNomeParcial(nomeParcial); // Buscando projetos
+        preencherTabela(projetos); // Preenchendo a tabela com os resultados da busca
+    }//GEN-LAST:event_btnProcurarActionPerformed
+
+    private void btnConcluidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConcluidoActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+        TelaProjetoUsuario telaProjetoUsuario = new TelaProjetoUsuario();
+        telaProjetoUsuario.setVisible(true);
+    }//GEN-LAST:event_btnConcluidoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -161,7 +217,6 @@ public class TelaPesquisarProjeto extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnCancelar;
     private javax.swing.JButton btnConcluido;
     private javax.swing.JButton btnProcurar;
     private javax.swing.JPanel jpanelFundo;

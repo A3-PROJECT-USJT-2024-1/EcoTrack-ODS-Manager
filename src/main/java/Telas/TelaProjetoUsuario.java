@@ -59,7 +59,7 @@ public class TelaProjetoUsuario extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(169, 172, 200));
 
         CriarProjetosButton.setFont(new java.awt.Font("Gliker", 0, 12)); // NOI18N
-        CriarProjetosButton.setForeground(new java.awt.Color(255, 255, 255));
+        CriarProjetosButton.setForeground(new java.awt.Color(0, 0, 0));
         CriarProjetosButton.setText("Criar Projeto");
         CriarProjetosButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -68,7 +68,7 @@ public class TelaProjetoUsuario extends javax.swing.JFrame {
         });
 
         GerenciarProjetosButton.setFont(new java.awt.Font("Gliker", 0, 12)); // NOI18N
-        GerenciarProjetosButton.setForeground(new java.awt.Color(255, 255, 255));
+        GerenciarProjetosButton.setForeground(new java.awt.Color(0, 0, 0));
         GerenciarProjetosButton.setText("Gerenciar Projetos");
         GerenciarProjetosButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -77,7 +77,7 @@ public class TelaProjetoUsuario extends javax.swing.JFrame {
         });
 
         ProcurarProjetoButton.setFont(new java.awt.Font("Gliker", 0, 12)); // NOI18N
-        ProcurarProjetoButton.setForeground(new java.awt.Color(255, 255, 255));
+        ProcurarProjetoButton.setForeground(new java.awt.Color(0, 0, 0));
         ProcurarProjetoButton.setText("Procurar Projeto");
         ProcurarProjetoButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -86,7 +86,7 @@ public class TelaProjetoUsuario extends javax.swing.JFrame {
         });
 
         SairButton.setFont(new java.awt.Font("Gliker", 0, 12)); // NOI18N
-        SairButton.setForeground(new java.awt.Color(255, 255, 255));
+        SairButton.setForeground(new java.awt.Color(0, 0, 0));
         SairButton.setText("Sair");
         SairButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -137,7 +137,7 @@ public class TelaProjetoUsuario extends javax.swing.JFrame {
         jPanel3.setPreferredSize(new java.awt.Dimension(590, 840));
 
         CurtirButtonW.setFont(new java.awt.Font("Gliker", 0, 12)); // NOI18N
-        CurtirButtonW.setForeground(new java.awt.Color(255, 255, 255));
+        CurtirButtonW.setForeground(new java.awt.Color(0, 0, 0));
         CurtirButtonW.setText("Curtir");
         CurtirButtonW.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -146,7 +146,7 @@ public class TelaProjetoUsuario extends javax.swing.JFrame {
         });
 
         DetalhesDoProjetoButtonW.setFont(new java.awt.Font("Gliker", 0, 12)); // NOI18N
-        DetalhesDoProjetoButtonW.setForeground(new java.awt.Color(255, 255, 255));
+        DetalhesDoProjetoButtonW.setForeground(new java.awt.Color(0, 0, 0));
         DetalhesDoProjetoButtonW.setText("Detalhes do Projetos");
         DetalhesDoProjetoButtonW.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -155,7 +155,7 @@ public class TelaProjetoUsuario extends javax.swing.JFrame {
         });
 
         DetalhesDoProjetoX.setFont(new java.awt.Font("Gliker", 0, 12)); // NOI18N
-        DetalhesDoProjetoX.setForeground(new java.awt.Color(255, 255, 255));
+        DetalhesDoProjetoX.setForeground(new java.awt.Color(0, 0, 0));
         DetalhesDoProjetoX.setText("Detalhes do Projeto");
         DetalhesDoProjetoX.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -173,7 +173,7 @@ public class TelaProjetoUsuario extends javax.swing.JFrame {
 
         TextProjetoW.setEditable(false);
         TextProjetoW.setFont(new java.awt.Font("Gliker", 0, 12)); // NOI18N
-        TextProjetoW.setForeground(new java.awt.Color(255, 255, 255));
+        TextProjetoW.setForeground(new java.awt.Color(0, 0, 0));
         TextProjetoW.setText("Projeto W");
         TextProjetoW.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -183,7 +183,7 @@ public class TelaProjetoUsuario extends javax.swing.JFrame {
 
         TextProjetoX.setEditable(false);
         TextProjetoX.setFont(new java.awt.Font("Gliker", 0, 12)); // NOI18N
-        TextProjetoX.setForeground(new java.awt.Color(255, 255, 255));
+        TextProjetoX.setForeground(new java.awt.Color(0, 0, 0));
         TextProjetoX.setText("Projeto X");
         TextProjetoX.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -192,7 +192,7 @@ public class TelaProjetoUsuario extends javax.swing.JFrame {
         });
 
         CurtirButtonX.setFont(new java.awt.Font("Gliker", 0, 12)); // NOI18N
-        CurtirButtonX.setForeground(new java.awt.Color(255, 255, 255));
+        CurtirButtonX.setForeground(new java.awt.Color(0, 0, 0));
         CurtirButtonX.setText("Curtir");
         CurtirButtonX.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -202,7 +202,7 @@ public class TelaProjetoUsuario extends javax.swing.JFrame {
 
         TextProjetoZ.setEditable(false);
         TextProjetoZ.setFont(new java.awt.Font("Gliker", 0, 12)); // NOI18N
-        TextProjetoZ.setForeground(new java.awt.Color(255, 255, 255));
+        TextProjetoZ.setForeground(new java.awt.Color(0, 0, 0));
         TextProjetoZ.setText("Projeto Z");
         TextProjetoZ.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -211,7 +211,7 @@ public class TelaProjetoUsuario extends javax.swing.JFrame {
         });
 
         DetalhesDoProjetoButtonZ.setFont(new java.awt.Font("Gliker", 0, 12)); // NOI18N
-        DetalhesDoProjetoButtonZ.setForeground(new java.awt.Color(255, 255, 255));
+        DetalhesDoProjetoButtonZ.setForeground(new java.awt.Color(0, 0, 0));
         DetalhesDoProjetoButtonZ.setText("Detalhes do Projeto");
         DetalhesDoProjetoButtonZ.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -220,7 +220,7 @@ public class TelaProjetoUsuario extends javax.swing.JFrame {
         });
 
         CurtirButtonZ.setFont(new java.awt.Font("Gliker", 0, 12)); // NOI18N
-        CurtirButtonZ.setForeground(new java.awt.Color(255, 255, 255));
+        CurtirButtonZ.setForeground(new java.awt.Color(0, 0, 0));
         CurtirButtonZ.setText("Curtir");
         CurtirButtonZ.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -345,6 +345,7 @@ public class TelaProjetoUsuario extends javax.swing.JFrame {
     private void ProcurarProjetoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ProcurarProjetoButtonActionPerformed
         // TODO add your handling code here:
         new TelaPesquisarProjeto().setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_ProcurarProjetoButtonActionPerformed
 
     private void GerenciarProjetosButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GerenciarProjetosButtonActionPerformed

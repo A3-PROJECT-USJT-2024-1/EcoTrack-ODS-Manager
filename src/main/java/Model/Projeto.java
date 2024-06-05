@@ -1,41 +1,35 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package Model;
-
-/**
- *
- * @author 12101863
- */
-
-
-import java.util.Date;
 
 import java.util.Date;
 
 public class Projeto {
-    private int id_Projeto;
-    private String nome_Projeto;
+    private int id;
+    private String nome;
     private String descricao;
-    private Date data_Criacao;
-    private String nome_ODS;
-    private boolean status;
+    private Date dataCriacao;
+    private int numeroODS;
+    private String nomeODS;
+    private String nomeResponsavel;
+    private String status;
 
-    public int getId_Projeto() {
-        return id_Projeto;
+    public Projeto() {
+        this.dataCriacao = new Date(); // Define a data de criação como a data atual no momento da criação do projeto
     }
 
-    public void setId_Projeto(int id_Projeto) {
-        this.id_Projeto = id_Projeto;
+    public int getId() {
+        return id;
     }
 
-    public String getNome_Projeto() {
-        return nome_Projeto;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public void setNome_Projeto(String nome_Projeto) {
-        this.nome_Projeto = nome_Projeto;
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
     public String getDescricao() {
@@ -46,28 +40,43 @@ public class Projeto {
         this.descricao = descricao;
     }
 
-    public Date getData_Criacao() {
-        return data_Criacao;
+    public Date getDataCriacao() {
+        return dataCriacao;
     }
 
-    public void setData_Criacao(Date data_Criacao) {
-        this.data_Criacao = data_Criacao;
+    public void setDataCriacao(Date dataCriacao) {
+        this.dataCriacao = dataCriacao;
     }
 
-    public String getNome_ODS() {
-        return nome_ODS;
+    public int getNumeroODS() {
+        return numeroODS;
     }
 
-    public void setNome_ODS(String nome_ODS) {
-        this.nome_ODS = nome_ODS;
+    public void setNumeroODS(int numeroODS) {
+        this.numeroODS = numeroODS;
     }
 
-    public boolean isStatus() {
+    public String getNomeODS() {
+        return nomeODS;
+    }
+
+    public void setNomeODS(String nomeODS) {
+        this.nomeODS = nomeODS;
+    }
+
+    public String getNomeResponsavel() {
+        return nomeResponsavel;
+    }
+
+    public void setNomeResponsavel(String nomeResponsavel) {
+        this.nomeResponsavel = nomeResponsavel;
+    }
+
+    public String getStatus() {
         return status;
     }
 
-    public void setStatus(boolean status) {
+    public void setStatus(String status) {
         this.status = status;
     }
 }
-
