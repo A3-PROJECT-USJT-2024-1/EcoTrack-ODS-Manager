@@ -2,18 +2,23 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
+
 package Telas;
+import DAO.ProjetoDAO;
+import Model.Projeto;
+import java.text.SimpleDateFormat;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author vini
  */
-public class TelaGerenciarProjetoo extends javax.swing.JFrame {
+public class TelaGerenciarProjeto extends javax.swing.JFrame {
 
     /**
      * Creates new form TelaGerenciarProjetoo
      */
-    public TelaGerenciarProjetoo() {
+    public TelaGerenciarProjeto() {
         initComponents();
     }
 
@@ -40,21 +45,27 @@ public class TelaGerenciarProjetoo extends javax.swing.JFrame {
         txtfieldResponsavel = new java.awt.TextField();
         label6 = new java.awt.Label();
         label7 = new java.awt.Label();
-        cbboxSituacao = new java.awt.Choice();
         btnConcluido = new java.awt.Button();
         btnProcurar = new javax.swing.JButton();
         btnSalvarNoBanco = new javax.swing.JButton();
         txtfieldODS = new java.awt.TextField();
+        txtfieldSituacao = new java.awt.TextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jPanel1.setBackground(new java.awt.Color(169, 172, 200));
+        jPanel1.setForeground(new java.awt.Color(169, 172, 200));
+
+        label1.setBackground(new java.awt.Color(169, 172, 200));
         label1.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        label1.setForeground(new java.awt.Color(255, 255, 255));
-        label1.setText("Gerencia Projeto");
+        label1.setForeground(new java.awt.Color(0, 0, 0));
+        label1.setText("Gerenciar Projeto");
 
         jLabel2.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("ID:");
 
+        txtfieldID.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
         txtfieldID.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtfieldIDActionPerformed(evt);
@@ -62,11 +73,11 @@ public class TelaGerenciarProjetoo extends javax.swing.JFrame {
         });
 
         label2.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        label2.setForeground(new java.awt.Color(255, 255, 255));
+        label2.setForeground(new java.awt.Color(0, 0, 0));
         label2.setText("Nome:");
 
         label3.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        label3.setForeground(new java.awt.Color(255, 255, 255));
+        label3.setForeground(new java.awt.Color(0, 0, 0));
         label3.setText("Criado em: ");
 
         txtfieldCriacaoProjeto.setEditable(false);
@@ -96,26 +107,36 @@ public class TelaGerenciarProjetoo extends javax.swing.JFrame {
         });
 
         label4.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        label4.setForeground(new java.awt.Color(255, 255, 255));
+        label4.setForeground(new java.awt.Color(0, 0, 0));
         label4.setText("Descrição:");
 
         label5.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        label5.setForeground(new java.awt.Color(255, 255, 255));
-        label5.setText("Respónsavel:");
+        label5.setForeground(new java.awt.Color(0, 0, 0));
+        label5.setText("Responsável:");
 
         txtfieldResponsavel.setEditable(false);
+        txtfieldResponsavel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtfieldResponsavelActionPerformed(evt);
+            }
+        });
 
         label6.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        label6.setForeground(new java.awt.Color(255, 255, 255));
+        label6.setForeground(new java.awt.Color(0, 0, 0));
         label6.setText("ODS:");
 
         label7.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        label7.setForeground(new java.awt.Color(255, 255, 255));
+        label7.setForeground(new java.awt.Color(0, 0, 0));
         label7.setText("Situação:");
 
         btnConcluido.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnConcluido.setLabel("Concluido");
         btnConcluido.setName(""); // NOI18N
+        btnConcluido.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnConcluidoActionPerformed(evt);
+            }
+        });
 
         btnProcurar.setText("Procurar");
         btnProcurar.addActionListener(new java.awt.event.ActionListener() {
@@ -125,8 +146,24 @@ public class TelaGerenciarProjetoo extends javax.swing.JFrame {
         });
 
         btnSalvarNoBanco.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/11646.jpg"))); // NOI18N
+        btnSalvarNoBanco.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSalvarNoBancoActionPerformed(evt);
+            }
+        });
 
         txtfieldODS.setEditable(false);
+        txtfieldODS.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtfieldODSActionPerformed(evt);
+            }
+        });
+
+        txtfieldSituacao.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtfieldSituacaoActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -153,21 +190,17 @@ public class TelaGerenciarProjetoo extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addComponent(label6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(txtfieldODS, javax.swing.GroupLayout.PREFERRED_SIZE, 407, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addComponent(label7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(cbboxSituacao, javax.swing.GroupLayout.PREFERRED_SIZE, 382, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(txtfieldSituacao, javax.swing.GroupLayout.PREFERRED_SIZE, 377, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
                                 .addComponent(btnSalvarNoBanco, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(191, 191, 191)
-                                .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, Short.MAX_VALUE))
                             .addComponent(txtfieldDescricao, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(txtfieldNome, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -180,6 +213,10 @@ public class TelaGerenciarProjetoo extends javax.swing.JFrame {
                                 .addGap(19, 19, 19)
                                 .addComponent(txtfieldResponsavel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                         .addGap(78, 78, 78))))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(294, 294, 294)
+                .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -219,10 +256,10 @@ public class TelaGerenciarProjetoo extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(label6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtfieldODS, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(29, 29, 29)
+                        .addGap(32, 32, 32)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(cbboxSituacao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(label7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(label7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtfieldSituacao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(27, 27, 27)
                         .addComponent(btnConcluido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -239,7 +276,7 @@ public class TelaGerenciarProjetoo extends javax.swing.JFrame {
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(0, 0, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
@@ -253,6 +290,7 @@ public class TelaGerenciarProjetoo extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void txtfieldIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtfieldIDActionPerformed
@@ -276,8 +314,68 @@ public class TelaGerenciarProjetoo extends javax.swing.JFrame {
     }//GEN-LAST:event_txtfieldDescricaoActionPerformed
 
     private void btnProcurarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProcurarActionPerformed
-        // TODO add your handling code here:
+    int id = Integer.parseInt(txtfieldID.getText());
+
+    // Cria um objeto ProjetoDAO para buscar o projeto no banco de dados
+    ProjetoDAO projetoDAO = new ProjetoDAO();
+    Projeto projeto = projetoDAO.buscarProjetoPorID(id);
+
+    // Verifica se o projeto foi encontradoa
+    if (projeto != null) {
+        // Preenche os campos com as informações do projeto
+        txtfieldNome.setText(projeto.getNome());
+        txtfieldDescricao.setText(projeto.getDescricao());
+        txtfieldCriacaoProjeto.setText(new SimpleDateFormat("dd/MM/yyyy").format(projeto.getDataCriacao()));
+        txtfieldODS.setText(projeto.getNomeODS());
+        txtfieldResponsavel.setText(projeto.getNomeResponsavel());
+        txtfieldSituacao.setText(projeto.getStatus());
+    } else {
+        JOptionPane.showMessageDialog(this, "Projeto não encontrado!");
+    }
     }//GEN-LAST:event_btnProcurarActionPerformed
+
+    private void btnConcluidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConcluidoActionPerformed
+       this.dispose();
+       TelaProjetoUsuario telaProjetoUsuario = new TelaProjetoUsuario();
+       telaProjetoUsuario.setVisible(true);
+    }//GEN-LAST:event_btnConcluidoActionPerformed
+
+    private void txtfieldODSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtfieldODSActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtfieldODSActionPerformed
+
+    private void txtfieldSituacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtfieldSituacaoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtfieldSituacaoActionPerformed
+
+    private void btnSalvarNoBancoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarNoBancoActionPerformed
+   // Recupera os dados inseridos/modificados na tela
+    int id = Integer.parseInt(txtfieldID.getText());
+    String nome = txtfieldNome.getText();
+    String descricao = txtfieldDescricao.getText();
+    String status = txtfieldSituacao.getText(); // Corrigindo para pegar o status da combobox
+    
+    // Cria um objeto Projeto com os dados da tela
+    Projeto projeto = new Projeto();
+    projeto.setId(id);
+    projeto.setNome(nome);
+    projeto.setDescricao(descricao);
+    projeto.setStatus(status);
+    
+    // Cria um objeto ProjetoDAO para atualizar o projeto no banco de dados
+    ProjetoDAO projetoDAO = new ProjetoDAO();
+    projetoDAO.atualizarProjeto(projeto);
+    
+    // Salvar a ODS novamente no banco de dados
+    projetoDAO.atualizarODS(projeto.getId(), txtfieldODS.getText());
+    
+    // Exibe uma mensagem de confirmação
+    JOptionPane.showMessageDialog(this, "Projeto atualizado com sucesso!");
+    }//GEN-LAST:event_btnSalvarNoBancoActionPerformed
+
+    private void txtfieldResponsavelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtfieldResponsavelActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtfieldResponsavelActionPerformed
 
     /**
      * @param args the command line arguments
@@ -296,20 +394,21 @@ public class TelaGerenciarProjetoo extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(TelaGerenciarProjetoo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaGerenciarProjeto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(TelaGerenciarProjetoo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaGerenciarProjeto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(TelaGerenciarProjetoo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaGerenciarProjeto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(TelaGerenciarProjetoo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaGerenciarProjeto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new TelaGerenciarProjetoo().setVisible(true);
+                new TelaGerenciarProjeto().setVisible(true);
             }
         });
     }
@@ -318,7 +417,6 @@ public class TelaGerenciarProjetoo extends javax.swing.JFrame {
     private java.awt.Button btnConcluido;
     private javax.swing.JButton btnProcurar;
     private javax.swing.JButton btnSalvarNoBanco;
-    private java.awt.Choice cbboxSituacao;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private java.awt.Label label1;
@@ -334,5 +432,6 @@ public class TelaGerenciarProjetoo extends javax.swing.JFrame {
     private java.awt.TextField txtfieldNome;
     private java.awt.TextField txtfieldODS;
     private java.awt.TextField txtfieldResponsavel;
+    private java.awt.TextField txtfieldSituacao;
     // End of variables declaration//GEN-END:variables
 }

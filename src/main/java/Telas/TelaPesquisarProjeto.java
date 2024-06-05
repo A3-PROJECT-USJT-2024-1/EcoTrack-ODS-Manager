@@ -7,6 +7,7 @@ package Telas;
 import DAO.ProjetoDAO;
 import Model.Projeto;
 import java.util.ArrayList;
+import java.util.List;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -20,6 +21,7 @@ public class TelaPesquisarProjeto extends javax.swing.JFrame {
      */
     public TelaPesquisarProjeto() {
         initComponents();
+        projetoDAO = new ProjetoDAO();
     }
 
     /**
@@ -166,12 +168,13 @@ public class TelaPesquisarProjeto extends javax.swing.JFrame {
         Object[] row = {projeto.getId(), projeto.getNome()};
         model.addRow(row); // Adiciona uma nova linha à tabela com os dados do projeto
     }
-}
+}   
+    private ProjetoDAO projetoDAO;
     private void btnProcurarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProcurarActionPerformed
-        String nomeParcial = txtfieldNomeProjeto.getText(); // Recuperando o texto do campo de texto
-        ProjetoDAO projetoDAO = new ProjetoDAO(); // Criando uma instância de ProjetoDAO
-        ArrayList<Projeto> projetos = projetoDAO.buscarProjetosPorNomeParcial(nomeParcial); // Buscando projetos
-        preencherTabela(projetos); // Preenchendo a tabela com os resultados da busca
+          String nomeParcial = txtfieldNomeProjeto.getText();
+    List<Projeto> projetos = projetoDAO.buscarProjetosPorNomeParcial(nomeParcial); 
+    ArrayList<Projeto> projetosArrayList = new ArrayList<>(projetos); 
+    preencherTabela(projetosArrayList);
     }//GEN-LAST:event_btnProcurarActionPerformed
 
     private void btnConcluidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConcluidoActionPerformed

@@ -11,6 +11,8 @@ public class Projeto {
     private String nomeODS;
     private String nomeResponsavel;
     private String status;
+    private int curtidas;
+    
 
     public Projeto() {
         this.dataCriacao = new Date(); // Define a data de criação como a data atual no momento da criação do projeto
@@ -19,6 +21,15 @@ public class Projeto {
     public int getId() {
         return id;
     }
+
+    public int getCurtidas() {
+        return curtidas;
+    }
+
+    public void setCurtidas(int curtidas) {
+        this.curtidas = curtidas;
+    }
+    
 
     public void setId(int id) {
         this.id = id;

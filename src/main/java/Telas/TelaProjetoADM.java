@@ -313,7 +313,7 @@ public class TelaProjetoADM extends javax.swing.JFrame {
 
     private void GerenciarProjetosButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GerenciarProjetosButtonActionPerformed
         // TODO add your handling code here:
-        new TelaGerenciarProjetoo().setVisible(true);
+        new TelaGerenciarProjeto().setVisible(true);
         this.dispose();
        
     }//GEN-LAST:event_GerenciarProjetosButtonActionPerformed

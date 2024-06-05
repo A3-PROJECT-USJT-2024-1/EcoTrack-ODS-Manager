@@ -4,6 +4,10 @@
  */
 package Telas;
 
+import DAO.ProjetoDAO;
+import Model.Projeto;
+import java.util.List;
+
 /**
  *
  * @author eu
@@ -15,6 +19,7 @@ public class TelaProjetoUsuario extends javax.swing.JFrame {
      */
     public TelaProjetoUsuario() {
         initComponents();
+        carregarProjetosEmAlta();
     }
 
     /**
@@ -309,7 +314,7 @@ public class TelaProjetoUsuario extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 839, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
@@ -321,7 +326,7 @@ public class TelaProjetoUsuario extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 603, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 845, Short.MAX_VALUE)
         );
 
         pack();
@@ -329,17 +334,45 @@ public class TelaProjetoUsuario extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void SairButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SairButtonActionPerformed
-       this.dispose();
-       TelaLogin telaLogin = new TelaLogin();
-       telaLogin.setVisible(true);
-        
+        this.dispose();
+        TelaLogin telaLogin = new TelaLogin();
+        telaLogin.setVisible(true);
+
     }//GEN-LAST:event_SairButtonActionPerformed
+    private void carregarProjetosEmAlta() {
+        ProjetoDAO projetoDAO = new ProjetoDAO();
+        List<Projeto> projetosEmAlta = projetoDAO.consultarProjetosEmAlta();
+
+        // Verifica se existem projetos em alta para exibir
+        if (!projetosEmAlta.isEmpty()) {
+            // Exibe os detalhes dos projetos nos campos de texto e áreas de texto
+            for (int i = 0; i < projetosEmAlta.size(); i++) {
+                Projeto projeto = projetosEmAlta.get(i);
+                switch (i) {
+                    case 0:
+                        TextProjetoW.setText(projeto.getNome());
+                        TextAreaW.setText(projeto.getDescricao());
+                        break;
+                    case 1:
+                        TextProjetoX.setText(projeto.getNome());
+                        TextAreaX.setText(projeto.getDescricao());
+                        break;
+                    case 2:
+                        TextProjetoZ.setText(projeto.getNome());
+                        TextAreaZ.setText(projeto.getDescricao());
+                        break;
+                    default:
+                        break;
+                }
+            }
+        }
+    }
 
     private void CriarProjetosButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CriarProjetosButtonActionPerformed
         // TODO add your handling code here:
-       TelaCadastroProjeto telaCadastraProjeto = new TelaCadastroProjeto();
-       this.dispose();
-       telaCadastraProjeto.setVisible(true);
+        TelaCadastroProjeto telaCadastraProjeto = new TelaCadastroProjeto();
+        this.dispose();
+        telaCadastraProjeto.setVisible(true);
     }//GEN-LAST:event_CriarProjetosButtonActionPerformed
 
     private void ProcurarProjetoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ProcurarProjetoButtonActionPerformed
@@ -350,8 +383,9 @@ public class TelaProjetoUsuario extends javax.swing.JFrame {
 
     private void GerenciarProjetosButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GerenciarProjetosButtonActionPerformed
         // TODO add your handling code here:
-        new TelaGerenciarProjetoo().setVisible(true);
-       
+        new TelaGerenciarProjeto().setVisible(true);
+        this.dispose();
+
     }//GEN-LAST:event_GerenciarProjetosButtonActionPerformed
 
     private void CurtirButtonXActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CurtirButtonXActionPerformed
