@@ -281,7 +281,7 @@ public class TelaGerenciaUsuario extends javax.swing.JFrame {
 
     private void lixeiraButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lixeiraButtonActionPerformed
         // TODO add your handling code here:
-    
+
     }//GEN-LAST:event_lixeiraButtonActionPerformed
 
     private void ComboBoxPrivilegiosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComboBoxPrivilegiosActionPerformed
@@ -305,7 +305,7 @@ public class TelaGerenciaUsuario extends javax.swing.JFrame {
     }//GEN-LAST:event_textFieldEmailActionPerformed
 
     private void concluidoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_concluidoButtonActionPerformed
-        this.dispose();    
+        this.dispose();
         TelaProjetoADM telaProjetoUsuario = new TelaProjetoADM();
         telaProjetoUsuario.setVisible(true);
     }//GEN-LAST:event_concluidoButtonActionPerformed

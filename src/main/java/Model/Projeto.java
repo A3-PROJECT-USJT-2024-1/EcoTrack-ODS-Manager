@@ -3,6 +3,7 @@ package Model;
 import java.util.Date;
 
 public class Projeto {
+
     private int id;
     private String nome;
     private String descricao;
@@ -12,7 +13,6 @@ public class Projeto {
     private String nomeResponsavel;
     private String status;
     private int curtidas;
-    
 
     public Projeto() {
         this.dataCriacao = new Date(); // Define a data de criação como a data atual no momento da criação do projeto
@@ -29,7 +29,6 @@ public class Projeto {
     public void setCurtidas(int curtidas) {
         this.curtidas = curtidas;
     }
-    
 
     public void setId(int id) {
         this.id = id;

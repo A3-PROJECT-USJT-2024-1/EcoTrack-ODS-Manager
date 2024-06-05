@@ -192,7 +192,7 @@ public class TelaCadastroProjeto extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-            
+
     private void txi_NomeProjetoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txi_NomeProjetoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txi_NomeProjetoActionPerformed
@@ -200,7 +200,7 @@ public class TelaCadastroProjeto extends javax.swing.JFrame {
     private void cmb_ODSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmb_ODSActionPerformed
 
         }//GEN-LAST:event_cmb_ODSActionPerformed
-    
+
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
         // TODO add your handling code here:
         this.dispose();
@@ -215,37 +215,38 @@ public class TelaCadastroProjeto extends javax.swing.JFrame {
         cmb_ODS.removeAllItems(); // Remove qualquer item existente
         for (String nomeODS : nomesODS) {
             System.out.println("Adicionando ODS na combobox: " + nomeODS);
-        cmb_ODS.addItem(nomeODS);}
+            cmb_ODS.addItem(nomeODS);
+        }
     }//GEN-LAST:event_cmb_ODSAncestorAdded
 
     private void btnCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarActionPerformed
-    String nomeProjeto = txi_NomeProjeto.getText();
-    String descricao = jTextArea1.getText();
-    String usuarioResponsavel = txi_UsuarioResponsavel.getText();
-    String nomeOds = (String) cmb_ODS.getSelectedItem();
-    int numeroOds = cmb_ODS.getSelectedIndex() + 1;
+        String nomeProjeto = txi_NomeProjeto.getText();
+        String descricao = jTextArea1.getText();
+        String usuarioResponsavel = txi_UsuarioResponsavel.getText();
+        String nomeOds = (String) cmb_ODS.getSelectedItem();
+        int numeroOds = cmb_ODS.getSelectedIndex() + 1;
 
-    // Criar o projeto com os dados coletados
-    Projeto projeto = new Projeto();
-    projeto.setNome(nomeProjeto);
-    projeto.setDescricao(descricao);
-    projeto.setNomeResponsavel(usuarioResponsavel);
-    projeto.setNumeroODS(numeroOds);
-    projeto.setNomeODS(nomeOds);
-    projeto.setStatus("Em Andamento"); // Defina o status conforme necessário
+        // Criar o projeto com os dados coletados
+        Projeto projeto = new Projeto();
+        projeto.setNome(nomeProjeto);
+        projeto.setDescricao(descricao);
+        projeto.setNomeResponsavel(usuarioResponsavel);
+        projeto.setNumeroODS(numeroOds);
+        projeto.setNomeODS(nomeOds);
+        projeto.setStatus("Em Andamento"); // Defina o status conforme necessário
 
-    // Inserir o projeto no banco de dados
-    ProjetoDAO projetoDAO = new ProjetoDAO();
-    projetoDAO.inserirProjeto(projeto);
+        // Inserir o projeto no banco de dados
+        ProjetoDAO projetoDAO = new ProjetoDAO();
+        projetoDAO.inserirProjeto(projeto);
 
-    // Limpar os campos após o cadastro
-    txi_NomeProjeto.setText("");
-    jTextArea1.setText("");
-    txi_UsuarioResponsavel.setText("");
-    cmb_ODS.setSelectedIndex(0);
+        // Limpar os campos após o cadastro
+        txi_NomeProjeto.setText("");
+        jTextArea1.setText("");
+        txi_UsuarioResponsavel.setText("");
+        cmb_ODS.setSelectedIndex(0);
 
-    // Exibir mensagem de sucesso para o usuário
-    JOptionPane.showMessageDialog(this, "Projeto cadastrado com sucesso!");
+        // Exibir mensagem de sucesso para o usuário
+        JOptionPane.showMessageDialog(this, "Projeto cadastrado com sucesso!");
     }//GEN-LAST:event_btnCadastrarActionPerformed
 
     /**

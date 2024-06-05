@@ -9,5 +9,5 @@ package DAO;
  * @author 12101863
  */
 public class CurtidaDAO {
-    
+
 }

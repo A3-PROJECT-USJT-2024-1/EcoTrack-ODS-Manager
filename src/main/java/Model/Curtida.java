@@ -9,5 +9,5 @@ package Model;
  * @author 12101863
  */
 public class Curtida {
-    
+
 }

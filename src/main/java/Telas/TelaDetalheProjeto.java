@@ -4,11 +4,17 @@
  */
 package Telas;
 
+import DAO.ProjetoDAO;
+import Model.Projeto;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author May
  */
 public class TelaDetalheProjeto extends javax.swing.JFrame {
+
+    private Projeto projetoAtual;
 
     /**
      * Creates new form TelaDetalheProjeto
@@ -16,6 +22,9 @@ public class TelaDetalheProjeto extends javax.swing.JFrame {
     public TelaDetalheProjeto() {
         initComponents();
         setLocationRelativeTo(null);
+        textfieldID = new javax.swing.JTextField();
+        idTextField = new javax.swing.JTextField(); // Corrigindo a inicialização do campo de texto
+
     }
 
     /**
@@ -74,6 +83,11 @@ public class TelaDetalheProjeto extends javax.swing.JFrame {
 
         btn_Curtir.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         btn_Curtir.setText("Curtir");
+        btn_Curtir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_CurtirActionPerformed(evt);
+            }
+        });
 
         lbl_Descricao.setForeground(new java.awt.Color(255, 255, 255));
         lbl_Descricao.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -88,6 +102,11 @@ public class TelaDetalheProjeto extends javax.swing.JFrame {
         });
 
         btnProcurar.setText("Procurar");
+        btnProcurar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnProcurarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -161,7 +180,13 @@ public class TelaDetalheProjeto extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+    private javax.swing.JTextField idTextField;
 
+    private boolean isNumeric(String str) {
+        return str != null && str.matches("\\d+");
+
+    }
+    private javax.swing.JTextField curtidasTextField;
     private void btn_ConcluidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ConcluidoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btn_ConcluidoActionPerformed
@@ -169,6 +194,37 @@ public class TelaDetalheProjeto extends javax.swing.JFrame {
     private void textfieldIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textfieldIDActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_textfieldIDActionPerformed
+
+    private void btnProcurarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProcurarActionPerformed
+        try {
+            String idText = idTextField.getText();
+            if (!idText.isEmpty()) {
+                int id = Integer.parseInt(idText);
+                ProjetoDAO projetoDAO = new ProjetoDAO();
+                projetoAtual = projetoDAO.buscarProjetoPorID(id); // Usa a variável projetoAtual
+
+                if (projetoAtual != null) {
+                    lbl_NomeDoProjeto.setText(projetoAtual.getNome());
+                    lbl_Descricao.setText(projetoAtual.getDescricao());
+                } else {
+                    JOptionPane.showMessageDialog(this, "Projeto não encontrado.");
+                }
+            } else {
+                JOptionPane.showMessageDialog(this, "Insira um número válido para o ID.");
+            }
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "Insira um número válido para o ID.");
+        }
+    }//GEN-LAST:event_btnProcurarActionPerformed
+
+    private void btn_CurtirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_CurtirActionPerformed
+        if (projetoAtual != null) { // Usa a variável projetoAtual
+            ProjetoDAO projetoDAO = new ProjetoDAO();
+            projetoDAO.incrementarCurtida(projetoAtual.getId()); // Usa a variável projetoAtual
+            projetoAtual.setCurtidas(projetoAtual.getCurtidas() + 1); // Usa a variável projetoAtual
+            curtidasTextField.setText(String.valueOf(projetoAtual.getCurtidas())); // Usa a variável curtidasTextField e projetoAtual
+        }
+    }//GEN-LAST:event_btn_CurtirActionPerformed
 
     /**
      * @param args the command line arguments

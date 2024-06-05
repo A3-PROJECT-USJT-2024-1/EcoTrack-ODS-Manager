@@ -12,7 +12,7 @@ import java.util.List;
 
 public class ProjetoDAO {
 
-     private final Connection conexao;
+    private final Connection conexao;
 
     public ProjetoDAO() {
         ConnectionFactory factory = new ConnectionFactory();
@@ -112,8 +112,7 @@ public class ProjetoDAO {
 
     public List<Projeto> consultarProjetosEmAlta() {
         List<Projeto> projetosEmAlta = new ArrayList<>();
-        try (PreparedStatement stmt = conexao.prepareStatement("SELECT * FROM projetos ORDER BY curtidas DESC LIMIT 3");
-             ResultSet rs = stmt.executeQuery()) {
+        try (PreparedStatement stmt = conexao.prepareStatement("SELECT * FROM projetos ORDER BY curtidas DESC LIMIT 3"); ResultSet rs = stmt.executeQuery()) {
             while (rs.next()) {
                 Projeto projeto = new Projeto();
                 projeto.setId(rs.getInt("id"));
@@ -126,5 +125,15 @@ public class ProjetoDAO {
             System.out.println("Erro ao consultar projetos em alta: " + e.getMessage());
         }
         return projetosEmAlta;
+    }
+
+    public void incrementarCurtida(int idProjeto) {
+        String sql = "UPDATE tb_Projeto SET curtidas = curtidas + 1 WHERE id_Projeto = ?";
+        try (PreparedStatement stmt = conexao.prepareStatement(sql)) {
+            stmt.setInt(1, idProjeto);
+            stmt.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 }

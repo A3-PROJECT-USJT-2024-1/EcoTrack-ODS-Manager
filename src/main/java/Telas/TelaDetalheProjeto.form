@@ -196,6 +196,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Curtir"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_CurtirActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="lbl_Descricao">
           <Properties>
@@ -225,6 +228,9 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Procurar"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnProcurarActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>

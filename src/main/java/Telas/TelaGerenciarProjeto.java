@@ -2,8 +2,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-
 package Telas;
+
 import DAO.ProjetoDAO;
 import Model.Projeto;
 import java.text.SimpleDateFormat;
@@ -314,30 +314,30 @@ public class TelaGerenciarProjeto extends javax.swing.JFrame {
     }//GEN-LAST:event_txtfieldDescricaoActionPerformed
 
     private void btnProcurarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProcurarActionPerformed
-    int id = Integer.parseInt(txtfieldID.getText());
+        int id = Integer.parseInt(txtfieldID.getText());
 
-    // Cria um objeto ProjetoDAO para buscar o projeto no banco de dados
-    ProjetoDAO projetoDAO = new ProjetoDAO();
-    Projeto projeto = projetoDAO.buscarProjetoPorID(id);
+        // Cria um objeto ProjetoDAO para buscar o projeto no banco de dados
+        ProjetoDAO projetoDAO = new ProjetoDAO();
+        Projeto projeto = projetoDAO.buscarProjetoPorID(id);
 
-    // Verifica se o projeto foi encontradoa
-    if (projeto != null) {
-        // Preenche os campos com as informações do projeto
-        txtfieldNome.setText(projeto.getNome());
-        txtfieldDescricao.setText(projeto.getDescricao());
-        txtfieldCriacaoProjeto.setText(new SimpleDateFormat("dd/MM/yyyy").format(projeto.getDataCriacao()));
-        txtfieldODS.setText(projeto.getNomeODS());
-        txtfieldResponsavel.setText(projeto.getNomeResponsavel());
-        txtfieldSituacao.setText(projeto.getStatus());
-    } else {
-        JOptionPane.showMessageDialog(this, "Projeto não encontrado!");
-    }
+        // Verifica se o projeto foi encontradoa
+        if (projeto != null) {
+            // Preenche os campos com as informações do projeto
+            txtfieldNome.setText(projeto.getNome());
+            txtfieldDescricao.setText(projeto.getDescricao());
+            txtfieldCriacaoProjeto.setText(new SimpleDateFormat("dd/MM/yyyy").format(projeto.getDataCriacao()));
+            txtfieldODS.setText(projeto.getNomeODS());
+            txtfieldResponsavel.setText(projeto.getNomeResponsavel());
+            txtfieldSituacao.setText(projeto.getStatus());
+        } else {
+            JOptionPane.showMessageDialog(this, "Projeto não encontrado!");
+        }
     }//GEN-LAST:event_btnProcurarActionPerformed
 
     private void btnConcluidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConcluidoActionPerformed
-       this.dispose();
-       TelaProjetoUsuario telaProjetoUsuario = new TelaProjetoUsuario();
-       telaProjetoUsuario.setVisible(true);
+        this.dispose();
+        TelaProjetoUsuario telaProjetoUsuario = new TelaProjetoUsuario();
+        telaProjetoUsuario.setVisible(true);
     }//GEN-LAST:event_btnConcluidoActionPerformed
 
     private void txtfieldODSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtfieldODSActionPerformed
@@ -349,28 +349,28 @@ public class TelaGerenciarProjeto extends javax.swing.JFrame {
     }//GEN-LAST:event_txtfieldSituacaoActionPerformed
 
     private void btnSalvarNoBancoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarNoBancoActionPerformed
-   // Recupera os dados inseridos/modificados na tela
-    int id = Integer.parseInt(txtfieldID.getText());
-    String nome = txtfieldNome.getText();
-    String descricao = txtfieldDescricao.getText();
-    String status = txtfieldSituacao.getText(); // Corrigindo para pegar o status da combobox
-    
-    // Cria um objeto Projeto com os dados da tela
-    Projeto projeto = new Projeto();
-    projeto.setId(id);
-    projeto.setNome(nome);
-    projeto.setDescricao(descricao);
-    projeto.setStatus(status);
-    
-    // Cria um objeto ProjetoDAO para atualizar o projeto no banco de dados
-    ProjetoDAO projetoDAO = new ProjetoDAO();
-    projetoDAO.atualizarProjeto(projeto);
-    
-    // Salvar a ODS novamente no banco de dados
-    projetoDAO.atualizarODS(projeto.getId(), txtfieldODS.getText());
-    
-    // Exibe uma mensagem de confirmação
-    JOptionPane.showMessageDialog(this, "Projeto atualizado com sucesso!");
+        // Recupera os dados inseridos/modificados na tela
+        int id = Integer.parseInt(txtfieldID.getText());
+        String nome = txtfieldNome.getText();
+        String descricao = txtfieldDescricao.getText();
+        String status = txtfieldSituacao.getText(); // Corrigindo para pegar o status da combobox
+
+        // Cria um objeto Projeto com os dados da tela
+        Projeto projeto = new Projeto();
+        projeto.setId(id);
+        projeto.setNome(nome);
+        projeto.setDescricao(descricao);
+        projeto.setStatus(status);
+
+        // Cria um objeto ProjetoDAO para atualizar o projeto no banco de dados
+        ProjetoDAO projetoDAO = new ProjetoDAO();
+        projetoDAO.atualizarProjeto(projeto);
+
+        // Salvar a ODS novamente no banco de dados
+        projetoDAO.atualizarODS(projeto.getId(), txtfieldODS.getText());
+
+        // Exibe uma mensagem de confirmação
+        JOptionPane.showMessageDialog(this, "Projeto atualizado com sucesso!");
     }//GEN-LAST:event_btnSalvarNoBancoActionPerformed
 
     private void txtfieldResponsavelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtfieldResponsavelActionPerformed

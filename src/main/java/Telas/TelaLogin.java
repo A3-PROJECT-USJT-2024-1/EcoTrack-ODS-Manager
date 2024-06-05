@@ -161,32 +161,32 @@ public class TelaLogin extends javax.swing.JFrame {
     }//GEN-LAST:event_fieldUsuarioActionPerformed
 
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
-                                      
-     String usuario = fieldUsuario.getText();
-    String senha = new String(fieldSenha.getPassword());
 
-    UsuarioDAO usuarioDAO = new UsuarioDAO();
-    Usuario user = usuarioDAO.verificarLogin(usuario, senha);
+        String usuario = fieldUsuario.getText();
+        String senha = new String(fieldSenha.getPassword());
 
-    if (user != null) {
-        if (user.getPrivilegio().equals("Administrador")) {
-            TelaProjetoADM telaProjetoADM = new TelaProjetoADM();
-            telaProjetoADM.setVisible(true);
-        } else if (user.getPrivilegio().equals("Usuario")) {
-            TelaProjetoUsuario telaProjeto = new TelaProjetoUsuario();
-            telaProjeto.setVisible(true);
+        UsuarioDAO usuarioDAO = new UsuarioDAO();
+        Usuario user = usuarioDAO.verificarLogin(usuario, senha);
+
+        if (user != null) {
+            if (user.getPrivilegio().equals("Administrador")) {
+                TelaProjetoADM telaProjetoADM = new TelaProjetoADM();
+                telaProjetoADM.setVisible(true);
+            } else if (user.getPrivilegio().equals("Usuario")) {
+                TelaProjetoUsuario telaProjeto = new TelaProjetoUsuario();
+                telaProjeto.setVisible(true);
+            }
+            this.dispose(); // Fecha a tela de login
+        } else {
+            JOptionPane.showMessageDialog(this, "Login ou senha incorretos", "Erro", JOptionPane.ERROR_MESSAGE);
         }
-        this.dispose(); // Fecha a tela de login
-    } else {
-        JOptionPane.showMessageDialog(this, "Login ou senha incorretos", "Erro", JOptionPane.ERROR_MESSAGE);
-    }
 
     }//GEN-LAST:event_btnLoginActionPerformed
 
     private void btnCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarActionPerformed
-       TelaCadastroUsuario telaCadastroUsuario = new TelaCadastroUsuario();
-       telaCadastroUsuario.setVisible(true);
-       this.dispose();
+        TelaCadastroUsuario telaCadastroUsuario = new TelaCadastroUsuario();
+        telaCadastroUsuario.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_btnCadastrarActionPerformed
 
     /**

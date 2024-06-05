@@ -38,11 +38,10 @@ public class TelaProjetoUsuario extends javax.swing.JFrame {
         ProcurarProjetoButton = new javax.swing.JButton();
         SairButton = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        DetalhesDoProjetoButtonW = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jPanel3 = new javax.swing.JPanel();
         CurtirButtonW = new javax.swing.JButton();
-        DetalhesDoProjetoButtonW = new javax.swing.JButton();
-        DetalhesDoProjetoX = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         TextAreaW = new javax.swing.JTextArea();
         jScrollPane3 = new javax.swing.JScrollPane();
@@ -51,7 +50,6 @@ public class TelaProjetoUsuario extends javax.swing.JFrame {
         TextProjetoX = new javax.swing.JTextField();
         CurtirButtonX = new javax.swing.JButton();
         TextProjetoZ = new javax.swing.JTextField();
-        DetalhesDoProjetoButtonZ = new javax.swing.JButton();
         CurtirButtonZ = new javax.swing.JButton();
         jScrollPane5 = new javax.swing.JScrollPane();
         TextAreaZ = new javax.swing.JTextArea();
@@ -101,23 +99,36 @@ public class TelaProjetoUsuario extends javax.swing.JFrame {
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/UsuarioPNG (1).png"))); // NOI18N
 
+        DetalhesDoProjetoButtonW.setFont(new java.awt.Font("Gliker", 0, 12)); // NOI18N
+        DetalhesDoProjetoButtonW.setForeground(new java.awt.Color(0, 0, 0));
+        DetalhesDoProjetoButtonW.setText("Detalhes do Projetos");
+        DetalhesDoProjetoButtonW.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DetalhesDoProjetoButtonWActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                                .addComponent(GerenciarProjetosButton, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(ProcurarProjetoButton, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(SairButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(CriarProjetosButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(DetalhesDoProjetoButtonW, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel2Layout.createSequentialGroup()
+                            .addContainerGap()
+                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                                    .addComponent(GerenciarProjetosButton, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(ProcurarProjetoButton, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(SairButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(CriarProjetosButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addGroup(jPanel2Layout.createSequentialGroup()
+                            .addGap(18, 18, 18)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(10, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -131,7 +142,9 @@ public class TelaProjetoUsuario extends javax.swing.JFrame {
                 .addComponent(ProcurarProjetoButton, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(GerenciarProjetosButton, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 133, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(DetalhesDoProjetoButtonW, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 86, Short.MAX_VALUE)
                 .addComponent(SairButton, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(30, 30, 30))
         );
@@ -147,24 +160,6 @@ public class TelaProjetoUsuario extends javax.swing.JFrame {
         CurtirButtonW.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 CurtirButtonWActionPerformed(evt);
-            }
-        });
-
-        DetalhesDoProjetoButtonW.setFont(new java.awt.Font("Gliker", 0, 12)); // NOI18N
-        DetalhesDoProjetoButtonW.setForeground(new java.awt.Color(0, 0, 0));
-        DetalhesDoProjetoButtonW.setText("Detalhes do Projetos");
-        DetalhesDoProjetoButtonW.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                DetalhesDoProjetoButtonWActionPerformed(evt);
-            }
-        });
-
-        DetalhesDoProjetoX.setFont(new java.awt.Font("Gliker", 0, 12)); // NOI18N
-        DetalhesDoProjetoX.setForeground(new java.awt.Color(0, 0, 0));
-        DetalhesDoProjetoX.setText("Detalhes do Projeto");
-        DetalhesDoProjetoX.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                DetalhesDoProjetoXActionPerformed(evt);
             }
         });
 
@@ -215,15 +210,6 @@ public class TelaProjetoUsuario extends javax.swing.JFrame {
             }
         });
 
-        DetalhesDoProjetoButtonZ.setFont(new java.awt.Font("Gliker", 0, 12)); // NOI18N
-        DetalhesDoProjetoButtonZ.setForeground(new java.awt.Color(0, 0, 0));
-        DetalhesDoProjetoButtonZ.setText("Detalhes do Projeto");
-        DetalhesDoProjetoButtonZ.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                DetalhesDoProjetoButtonZActionPerformed(evt);
-            }
-        });
-
         CurtirButtonZ.setFont(new java.awt.Font("Gliker", 0, 12)); // NOI18N
         CurtirButtonZ.setForeground(new java.awt.Color(0, 0, 0));
         CurtirButtonZ.setText("Curtir");
@@ -244,24 +230,15 @@ public class TelaProjetoUsuario extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(CurtirButtonX, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(DetalhesDoProjetoX, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addComponent(jScrollPane3)
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 584, Short.MAX_VALUE)
                     .addComponent(TextProjetoW)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(CurtirButtonZ, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(DetalhesDoProjetoButtonZ, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addComponent(jScrollPane5)
                     .addComponent(TextProjetoZ)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(CurtirButtonW, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(DetalhesDoProjetoButtonW, javax.swing.GroupLayout.DEFAULT_SIZE, 423, Short.MAX_VALUE))
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(TextProjetoX))
+                    .addComponent(TextProjetoX)
+                    .addComponent(CurtirButtonW, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(CurtirButtonX, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(CurtirButtonZ, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(9, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
@@ -272,26 +249,20 @@ public class TelaProjetoUsuario extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(CurtirButtonW, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(DetalhesDoProjetoButtonW, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(CurtirButtonW, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(TextProjetoX, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(CurtirButtonX, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(DetalhesDoProjetoX, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(CurtirButtonX, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(TextProjetoZ, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(CurtirButtonZ, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(DetalhesDoProjetoButtonZ, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(CurtirButtonZ, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(15, Short.MAX_VALUE))
         );
 
         jScrollPane1.setViewportView(jPanel3);
@@ -314,7 +285,7 @@ public class TelaProjetoUsuario extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 839, Short.MAX_VALUE))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
@@ -326,7 +297,7 @@ public class TelaProjetoUsuario extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 845, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 603, Short.MAX_VALUE)
         );
 
         pack();
@@ -400,16 +371,6 @@ public class TelaProjetoUsuario extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_TextProjetoWActionPerformed
 
-    private void DetalhesDoProjetoXActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DetalhesDoProjetoXActionPerformed
-        // TODO add your handling code here:
-        new TelaDetalheProjeto().setVisible(true);
-    }//GEN-LAST:event_DetalhesDoProjetoXActionPerformed
-
-    private void DetalhesDoProjetoButtonWActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DetalhesDoProjetoButtonWActionPerformed
-        // TODO add your handling code here:
-        new TelaDetalheProjeto().setVisible(true);
-    }//GEN-LAST:event_DetalhesDoProjetoButtonWActionPerformed
-
     private void CurtirButtonWActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CurtirButtonWActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_CurtirButtonWActionPerformed
@@ -418,14 +379,15 @@ public class TelaProjetoUsuario extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_TextProjetoZActionPerformed
 
-    private void DetalhesDoProjetoButtonZActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DetalhesDoProjetoButtonZActionPerformed
-        // TODO add your handling code here:
-        new TelaDetalheProjeto().setVisible(true);
-    }//GEN-LAST:event_DetalhesDoProjetoButtonZActionPerformed
-
     private void CurtirButtonZActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CurtirButtonZActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_CurtirButtonZActionPerformed
+
+    private void DetalhesDoProjetoButtonWActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DetalhesDoProjetoButtonWActionPerformed
+        // TODO add your handling code here:
+        new TelaDetalheProjeto().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_DetalhesDoProjetoButtonWActionPerformed
 
     /**
      * @param args the command line arguments
@@ -471,8 +433,6 @@ public class TelaProjetoUsuario extends javax.swing.JFrame {
     private javax.swing.JButton CurtirButtonX;
     private javax.swing.JButton CurtirButtonZ;
     private javax.swing.JButton DetalhesDoProjetoButtonW;
-    private javax.swing.JButton DetalhesDoProjetoButtonZ;
-    private javax.swing.JButton DetalhesDoProjetoX;
     private javax.swing.JButton GerenciarProjetosButton;
     private javax.swing.JButton ProcurarProjetoButton;
     private javax.swing.JButton SairButton;

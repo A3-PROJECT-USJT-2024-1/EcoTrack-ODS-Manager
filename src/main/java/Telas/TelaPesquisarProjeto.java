@@ -161,20 +161,20 @@ public class TelaPesquisarProjeto extends javax.swing.JFrame {
     }//GEN-LAST:event_txtfieldNomeProjetoActionPerformed
 
     private void preencherTabela(ArrayList<Projeto> projetos) {
-    DefaultTableModel model = (DefaultTableModel) tableTabela.getModel();
-    model.setRowCount(0); // Limpa a tabela antes de adicionar novos dados
+        DefaultTableModel model = (DefaultTableModel) tableTabela.getModel();
+        model.setRowCount(0); // Limpa a tabela antes de adicionar novos dados
 
-    for (Projeto projeto : projetos) {
-        Object[] row = {projeto.getId(), projeto.getNome()};
-        model.addRow(row); // Adiciona uma nova linha à tabela com os dados do projeto
+        for (Projeto projeto : projetos) {
+            Object[] row = {projeto.getId(), projeto.getNome()};
+            model.addRow(row); // Adiciona uma nova linha à tabela com os dados do projeto
+        }
     }
-}   
     private ProjetoDAO projetoDAO;
     private void btnProcurarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProcurarActionPerformed
-          String nomeParcial = txtfieldNomeProjeto.getText();
-    List<Projeto> projetos = projetoDAO.buscarProjetosPorNomeParcial(nomeParcial); 
-    ArrayList<Projeto> projetosArrayList = new ArrayList<>(projetos); 
-    preencherTabela(projetosArrayList);
+        String nomeParcial = txtfieldNomeProjeto.getText();
+        List<Projeto> projetos = projetoDAO.buscarProjetosPorNomeParcial(nomeParcial);
+        ArrayList<Projeto> projetosArrayList = new ArrayList<>(projetos);
+        preencherTabela(projetosArrayList);
     }//GEN-LAST:event_btnProcurarActionPerformed
 
     private void btnConcluidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConcluidoActionPerformed

@@ -187,31 +187,31 @@ public class TelaCadastroUsuario extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
 
-    TelaLogin telaLogin = new TelaLogin();
-    telaLogin.setVisible(true);
-    this.dispose();
+        TelaLogin telaLogin = new TelaLogin();
+        telaLogin.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void btnConcluidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConcluidoActionPerformed
 
-    String nome = txtfielNome.getText();
-    String email = txtfieldEmail.getText();
-    String telefone = txtfieldTelefone.getText();
-    String loginUsuario = txtfielUsuario.getText();
-    String senha = new String(passfieldSenha.getPassword());
-    String privilegio = "Usuario"; 
+        String nome = txtfielNome.getText();
+        String email = txtfieldEmail.getText();
+        String telefone = txtfieldTelefone.getText();
+        String loginUsuario = txtfielUsuario.getText();
+        String senha = new String(passfieldSenha.getPassword());
+        String privilegio = "Usuario";
 
-    UsuarioDAO usuarioDAO = new UsuarioDAO();
-    usuarioDAO.inserirUsuario(loginUsuario, senha, nome, telefone, email, privilegio);
+        UsuarioDAO usuarioDAO = new UsuarioDAO();
+        usuarioDAO.inserirUsuario(loginUsuario, senha, nome, telefone, email, privilegio);
 
-   JOptionPane.showMessageDialog(this, "Usuário cadastrado com sucesso!", "Sucesso", JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(this, "Usuário cadastrado com sucesso!", "Sucesso", JOptionPane.INFORMATION_MESSAGE);
 
-    // Volta para a tela de login
-    TelaLogin telaLogin = new TelaLogin();
-    telaLogin.setVisible(true);
+        // Volta para a tela de login
+        TelaLogin telaLogin = new TelaLogin();
+        telaLogin.setVisible(true);
 
-    this.dispose();
-           
+        this.dispose();
+
     }//GEN-LAST:event_btnConcluidoActionPerformed
 
     private void txtfieldEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtfieldEmailActionPerformed
