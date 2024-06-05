@@ -18,14 +18,14 @@ CREATE TABLE tb_Ods (
 );
 
 CREATE TABLE tb_Projeto (
-    id_Projeto INT AUTO_INCREMENT PRIMARY KEY,
-    nome_Projeto VARCHAR(200) NOT NULL,
-    descricao TEXT NOT NULL,
-    data_Criacao DATE NOT NULL,
-    nome_ODS VARCHAR(200),
-    status BOOLEAN NOT NULL,
-    FOREIGN KEY (nome_ODS) REFERENCES tb_Ods(nome_Ods)
-);
+    id_Projeto INT PRIMARY KEY AUTO_INCREMENT,
+    nome_Projeto VARCHAR(255),
+    descricao TEXT,
+    data_Criacao DATE,
+    numero_Ods INT,
+    nome_ODS VARCHAR(255),
+    status VARCHAR(255)
+);;
 
 CREATE TABLE tb_Curte (
     fk_Projeto_id_Projeto INT,
