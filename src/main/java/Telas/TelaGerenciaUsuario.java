@@ -32,7 +32,6 @@ public class TelaGerenciaUsuario extends javax.swing.JFrame {
         jTextField7 = new javax.swing.JTextField();
         concluidoButton = new javax.swing.JButton();
         pesquisarUsuarioButton = new javax.swing.JButton();
-        lixeiraButton = new javax.swing.JButton();
         salvarButton = new javax.swing.JButton();
         ComboBoxPrivilegios = new javax.swing.JComboBox<>();
         jLabel1 = new javax.swing.JLabel();
@@ -69,14 +68,6 @@ public class TelaGerenciaUsuario extends javax.swing.JFrame {
 
         pesquisarUsuarioButton.setText("Pesquisar");
         pesquisarUsuarioButton.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-
-        lixeiraButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/5598.jpg"))); // NOI18N
-        lixeiraButton.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        lixeiraButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                lixeiraButtonActionPerformed(evt);
-            }
-        });
 
         salvarButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/11646.jpg"))); // NOI18N
         salvarButton.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -207,9 +198,7 @@ public class TelaGerenciaUsuario extends javax.swing.JFrame {
                         .addGap(308, 308, 308)
                         .addComponent(concluidoButton)
                         .addGap(18, 18, 18)
-                        .addComponent(salvarButton, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(lixeiraButton, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(salvarButton, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(205, 205, 205)
                         .addComponent(jLabel1)))
@@ -257,9 +246,7 @@ public class TelaGerenciaUsuario extends javax.swing.JFrame {
                         .addComponent(ComboBoxPrivilegios, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(lixeiraButton, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(salvarButton, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(salvarButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(concluidoButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(79, 79, 79))
         );
@@ -278,11 +265,6 @@ public class TelaGerenciaUsuario extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void lixeiraButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lixeiraButtonActionPerformed
-        // TODO add your handling code here:
-
-    }//GEN-LAST:event_lixeiraButtonActionPerformed
 
     private void ComboBoxPrivilegiosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComboBoxPrivilegiosActionPerformed
         // TODO add your handling code here:
@@ -368,7 +350,6 @@ public class TelaGerenciaUsuario extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField jTextField7;
-    private javax.swing.JButton lixeiraButton;
     private javax.swing.JPasswordField passwordFieldSenha;
     private javax.swing.JButton pesquisarUsuarioButton;
     private javax.swing.JButton salvarButton;

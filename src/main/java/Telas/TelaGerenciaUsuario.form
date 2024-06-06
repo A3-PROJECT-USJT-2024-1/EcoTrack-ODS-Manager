@@ -97,8 +97,6 @@
                           <Component id="concluidoButton" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="salvarButton" min="-2" pref="56" max="-2" attributes="0"/>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="lixeiraButton" min="-2" pref="56" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="205" max="-2" attributes="0"/>
@@ -162,10 +160,7 @@
                   </Group>
                   <EmptySpace pref="15" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="103" alignment="1" groupAlignment="0" attributes="0">
-                          <Component id="lixeiraButton" min="-2" pref="55" max="-2" attributes="0"/>
-                          <Component id="salvarButton" min="-2" pref="55" max="-2" attributes="0"/>
-                      </Group>
+                      <Component id="salvarButton" alignment="1" min="-2" pref="55" max="-2" attributes="0"/>
                       <Component id="concluidoButton" alignment="1" min="-2" pref="34" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="79" max="-2" attributes="0"/>
@@ -204,21 +199,6 @@
               </Border>
             </Property>
           </Properties>
-        </Component>
-        <Component class="javax.swing.JButton" name="lixeiraButton">
-          <Properties>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/images/5598.jpg"/>
-            </Property>
-            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-              <Border info="org.netbeans.modules.form.compat2.border.SoftBevelBorderInfo">
-                <BevelBorder/>
-              </Border>
-            </Property>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="lixeiraButtonActionPerformed"/>
-          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="salvarButton">
           <Properties>

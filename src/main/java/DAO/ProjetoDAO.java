@@ -114,13 +114,13 @@ public class ProjetoDAO {
 
     public List<Projeto> consultarProjetosEmAlta() {
         List<Projeto> projetosEmAlta = new ArrayList<>();
-        try (PreparedStatement stmt = conexao.prepareStatement("SELECT * FROM projetos ORDER BY curtidas DESC LIMIT 3"); ResultSet rs = stmt.executeQuery()) {
+        try (PreparedStatement stmt = conexao.prepareStatement("SELECT id_Projeto, nome_Projeto, descricao, curtida FROM tb_Projeto ORDER BY curtida DESC LIMIT 3"); ResultSet rs = stmt.executeQuery()) {
             while (rs.next()) {
                 Projeto projeto = new Projeto();
-                projeto.setId(rs.getInt("id"));
-                projeto.setNome(rs.getString("nome"));
+                projeto.setId(rs.getInt("id_Projeto"));
+                projeto.setNome(rs.getString("nome_Projeto"));
                 projeto.setDescricao(rs.getString("descricao"));
-                projeto.setCurtidas(rs.getInt("curtidas"));
+                projeto.setCurtidas(rs.getInt("curtida"));
                 projetosEmAlta.add(projeto);
             }
         } catch (SQLException e) {
@@ -130,10 +130,15 @@ public class ProjetoDAO {
     }
 
     public void incrementarCurtida(int idProjeto) {
-        String sql = "UPDATE tb_Projeto SET curtidas = curtidas + 1 WHERE id_Projeto = ?";
+        String sql = "UPDATE tb_Projeto SET curtida = curtida + 1 WHERE id_Projeto = ?";
         try (PreparedStatement stmt = conexao.prepareStatement(sql)) {
             stmt.setInt(1, idProjeto);
-            stmt.executeUpdate();
+            int rowsUpdated = stmt.executeUpdate();
+            if (rowsUpdated > 0) {
+                System.out.println("Curtida incrementada com sucesso para o projeto com ID: " + idProjeto);
+            } else {
+                System.out.println("Nenhuma linha foi atualizada. Projeto com ID: " + idProjeto + " não encontrado.");
+            }
         } catch (SQLException e) {
             e.printStackTrace();
         }
