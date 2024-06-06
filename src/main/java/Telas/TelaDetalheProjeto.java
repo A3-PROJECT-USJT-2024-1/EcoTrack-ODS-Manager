@@ -6,6 +6,7 @@ package Telas;
 
 import DAO.ProjetoDAO;
 import Model.Projeto;
+import java.text.SimpleDateFormat;
 import javax.swing.JOptionPane;
 
 /**
@@ -22,9 +23,6 @@ public class TelaDetalheProjeto extends javax.swing.JFrame {
     public TelaDetalheProjeto() {
         initComponents();
         setLocationRelativeTo(null);
-        textfieldID = new javax.swing.JTextField();
-        idTextField = new javax.swing.JTextField(); // Corrigindo a inicialização do campo de texto
-
     }
 
     /**
@@ -41,11 +39,13 @@ public class TelaDetalheProjeto extends javax.swing.JFrame {
         lbl_Data = new javax.swing.JLabel();
         btn_Concluido = new javax.swing.JButton();
         btn_Curtir = new javax.swing.JButton();
-        textfieldID = new javax.swing.JTextField();
         btnProcurar = new javax.swing.JButton();
         textfieldNomeProjeto = new javax.swing.JTextField();
         textfieldDescricaoProjeto = new javax.swing.JTextField();
         textfieldCriadorProjeto = new javax.swing.JTextField();
+        lblCurtidas = new javax.swing.JLabel();
+        textfieldLeituraCurtidas = new javax.swing.JTextField();
+        textfieldIDInserido = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -79,13 +79,6 @@ public class TelaDetalheProjeto extends javax.swing.JFrame {
             }
         });
 
-        textfieldID.setText("ID");
-        textfieldID.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                textfieldIDActionPerformed(evt);
-            }
-        });
-
         btnProcurar.setText("Procurar");
         btnProcurar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -102,6 +95,12 @@ public class TelaDetalheProjeto extends javax.swing.JFrame {
         textfieldCriadorProjeto.setEditable(false);
         textfieldCriadorProjeto.setBorder(javax.swing.BorderFactory.createTitledBorder("Criador do Projeto"));
 
+        lblCurtidas.setFont(new java.awt.Font("Gliker", 1, 12)); // NOI18N
+        lblCurtidas.setForeground(new java.awt.Color(255, 255, 255));
+        lblCurtidas.setText("Curtidas:");
+
+        textfieldLeituraCurtidas.setEditable(false);
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -115,10 +114,16 @@ public class TelaDetalheProjeto extends javax.swing.JFrame {
                         .addGap(88, 88, 88)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(textfieldID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(textfieldIDInserido, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(btnProcurar))
-                            .addComponent(lbl_Data, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(lbl_Data, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(lblCurtidas, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(textfieldLeituraCurtidas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(72, 72, 72))
                             .addComponent(textfieldNomeProjeto)
                             .addComponent(textfieldDescricaoProjeto, javax.swing.GroupLayout.DEFAULT_SIZE, 624, Short.MAX_VALUE)
                             .addComponent(textfieldCriadorProjeto))))
@@ -135,19 +140,22 @@ public class TelaDetalheProjeto extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(15, 15, 15)
                 .addComponent(lbl_Tema, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(textfieldID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnProcurar))
-                .addGap(21, 21, 21)
-                .addComponent(textfieldNomeProjeto, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(34, 34, 34)
-                .addComponent(lbl_Data)
+                    .addComponent(btnProcurar)
+                    .addComponent(textfieldIDInserido, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(22, 22, 22)
+                .addComponent(textfieldNomeProjeto, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lbl_Data)
+                    .addComponent(lblCurtidas)
+                    .addComponent(textfieldLeituraCurtidas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(textfieldDescricaoProjeto, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(textfieldCriadorProjeto, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(23, 23, 23)
+                .addComponent(textfieldCriadorProjeto, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btn_Concluido, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btn_Curtir, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -159,9 +167,8 @@ public class TelaDetalheProjeto extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -173,45 +180,30 @@ public class TelaDetalheProjeto extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-    private javax.swing.JTextField idTextField;
-
-    private boolean isNumeric(String str) {
-        return str != null && str.matches("\\d+");
-
-    }
-    private javax.swing.JTextField curtidasTextField;
-    private void btn_ConcluidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ConcluidoActionPerformed
-        this.dispose();
-        TelaProjetoUsuario telaProjetoUsuario = new TelaProjetoUsuario();
-        telaProjetoUsuario.setVisible(true);
-    }//GEN-LAST:event_btn_ConcluidoActionPerformed
-
-    private void textfieldIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textfieldIDActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_textfieldIDActionPerformed
 
     private void btnProcurarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProcurarActionPerformed
         try {
-            String idText = textfieldID.getText();
+            String idText = textfieldIDInserido.getText();
+            System.out.print(idText);
             if (!idText.isEmpty()) {
                 int id = Integer.parseInt(idText);
                 ProjetoDAO projetoDAO = new ProjetoDAO();
                 Projeto projetoAtual = projetoDAO.buscarProjetoPorID(id);
 
                 if (projetoAtual != null) {
-                    textfieldNomeProjeto.setText(projetoAtual.getNome());
-                    textfieldDescricaoProjeto.setText(projetoAtual.getDescricao());
-                    textfieldCriadorProjeto.setText(projetoAtual.getNomeResponsavel());
+                    System.out.println("Valor de ID digitado: " + idText);
+                    atualizarDetalhesProjeto(projetoAtual);
                 } else {
-                    JOptionPane.showMessageDialog(this, "Projeto não encontrado.");
+                    exibirMensagemErro("Projeto não encontrado.");
                 }
             } else {
-                JOptionPane.showMessageDialog(this, "Insira um número válido para o ID.");
+                exibirMensagemErro("Insira um número válido para o ID.");
             }
         } catch (NumberFormatException e) {
-            JOptionPane.showMessageDialog(this, "Insira um número válido para o ID.");
+            exibirMensagemErro("Insira um número válido para o ID.");
+        } catch (Exception ex) {
+            exibirMensagemErro("Ocorreu um erro ao buscar o projeto por ID.");
         }
-    
     }//GEN-LAST:event_btnProcurarActionPerformed
 
     private void btn_CurtirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_CurtirActionPerformed
@@ -219,12 +211,44 @@ public class TelaDetalheProjeto extends javax.swing.JFrame {
             ProjetoDAO projetoDAO = new ProjetoDAO();
             projetoDAO.incrementarCurtida(projetoAtual.getId());
             projetoAtual.setCurtidas(projetoAtual.getCurtidas() + 1);
-            curtidasTextField.setText(String.valueOf(projetoAtual.getCurtidas()));
+            textfieldLeituraCurtidas.setText(String.valueOf(projetoAtual.getCurtidas()));
             JOptionPane.showMessageDialog(this, "Projeto curtido com sucesso!");
         } else {
             JOptionPane.showMessageDialog(this, "Por favor, busque um projeto primeiro!");
         }
     }//GEN-LAST:event_btn_CurtirActionPerformed
+    private void atualizarDetalhesProjeto(Projeto projeto) {
+        textfieldNomeProjeto.setText(projeto.getNome());
+        textfieldDescricaoProjeto.setText(projeto.getDescricao());
+        textfieldCriadorProjeto.setText(projeto.getNomeResponsavel());
+        textfieldLeituraCurtidas.setText(String.valueOf(projeto.getCurtidas()));
+        lbl_Data.setText(new SimpleDateFormat("dd/MM/yyyy").format(projeto.getDataCriacao()));
+        projetoAtual = projeto;
+    }
+
+    private void incrementarCurtida(int idProjeto) {
+        ProjetoDAO projetoDAO = new ProjetoDAO();
+        projetoDAO.incrementarCurtida(idProjeto);
+        projetoAtual.setCurtidas(projetoAtual.getCurtidas() + 1);
+        textfieldLeituraCurtidas.setText(String.valueOf(projetoAtual.getCurtidas()));
+        JOptionPane.showMessageDialog(this, "Projeto curtido com sucesso!");
+    }
+
+    private boolean isNumeric(String str) {
+        return str != null && str.matches("\\d+");
+    }
+
+    private void exibirMensagemErro(String mensagem) {
+        JOptionPane.showMessageDialog(this, mensagem);
+    }
+
+    private void btn_ConcluidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ConcluidoActionPerformed
+        this.dispose();
+        TelaProjetoUsuario telaProjetoUsuario = new TelaProjetoUsuario();
+        telaProjetoUsuario.setVisible(true);
+    }//GEN-LAST:event_btn_ConcluidoActionPerformed
+
+    private javax.swing.JTextField curtidasTextField;
 
     /**
      * @param args the command line arguments
@@ -266,11 +290,13 @@ public class TelaDetalheProjeto extends javax.swing.JFrame {
     private javax.swing.JButton btn_Concluido;
     private javax.swing.JButton btn_Curtir;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel lblCurtidas;
     private javax.swing.JLabel lbl_Data;
     private javax.swing.JLabel lbl_Tema;
     private javax.swing.JTextField textfieldCriadorProjeto;
     private javax.swing.JTextField textfieldDescricaoProjeto;
-    private javax.swing.JTextField textfieldID;
+    private javax.swing.JTextField textfieldIDInserido;
+    private javax.swing.JTextField textfieldLeituraCurtidas;
     private javax.swing.JTextField textfieldNomeProjeto;
     // End of variables declaration//GEN-END:variables
 }

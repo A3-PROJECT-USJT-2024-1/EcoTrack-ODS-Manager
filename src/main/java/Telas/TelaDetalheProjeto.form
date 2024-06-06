@@ -24,9 +24,8 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="32767" attributes="0"/>
+              <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -61,11 +60,18 @@
                           <EmptySpace min="-2" pref="88" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
                               <Group type="102" attributes="0">
-                                  <Component id="textfieldID" min="-2" max="-2" attributes="0"/>
+                                  <Component id="textfieldIDInserido" min="-2" pref="86" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="btnProcurar" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <Component id="lbl_Data" alignment="0" min="-2" pref="83" max="-2" attributes="0"/>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="lbl_Data" min="-2" pref="83" max="-2" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
+                                  <Component id="lblCurtidas" min="-2" pref="83" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="textfieldLeituraCurtidas" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="72" max="-2" attributes="0"/>
+                              </Group>
                               <Component id="textfieldNomeProjeto" alignment="0" max="32767" attributes="0"/>
                               <Component id="textfieldDescricaoProjeto" alignment="0" pref="624" max="32767" attributes="0"/>
                               <Component id="textfieldCriadorProjeto" alignment="0" max="32767" attributes="0"/>
@@ -88,20 +94,24 @@
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
                   <Component id="lbl_Tema" min="-2" pref="68" max="-2" attributes="0"/>
-                  <EmptySpace pref="30" max="32767" attributes="0"/>
+                  <EmptySpace pref="45" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="textfieldID" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="btnProcurar" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="textfieldIDInserido" alignment="3" min="-2" pref="39" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
-                  <Component id="textfieldNomeProjeto" min="-2" pref="44" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
-                  <Component id="lbl_Data" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
+                  <Component id="textfieldNomeProjeto" min="-2" pref="71" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="lbl_Data" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblCurtidas" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="textfieldLeituraCurtidas" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="textfieldDescricaoProjeto" min="-2" pref="225" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="textfieldCriadorProjeto" min="-2" pref="44" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
+                  <Component id="textfieldCriadorProjeto" min="-2" pref="55" max="-2" attributes="0"/>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="btn_Concluido" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
                       <Component id="btn_Curtir" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
@@ -160,14 +170,6 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_CurtirActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JTextField" name="textfieldID">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="ID"/>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="textfieldIDActionPerformed"/>
-          </Events>
-        </Component>
         <Component class="javax.swing.JButton" name="btnProcurar">
           <Properties>
             <Property name="text" type="java.lang.String" value="Procurar"/>
@@ -205,6 +207,24 @@
               </Border>
             </Property>
           </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblCurtidas">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Gliker" size="12" style="1"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Curtidas:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="textfieldLeituraCurtidas">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="textfieldIDInserido">
         </Component>
       </SubComponents>
     </Container>
