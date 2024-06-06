@@ -22,14 +22,6 @@ public class Projeto {
         return id;
     }
 
-    public int getCurtidas() {
-        return curtidas;
-    }
-
-    public void setCurtidas(int curtidas) {
-        this.curtidas = curtidas;
-    }
-
     public void setId(int id) {
         this.id = id;
     }
@@ -88,5 +80,13 @@ public class Projeto {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public int getCurtidas() {
+        return curtidas;
+    }
+
+    public void setCurtidas(int curtidas) {
+        this.curtidas = curtidas;
     }
 }

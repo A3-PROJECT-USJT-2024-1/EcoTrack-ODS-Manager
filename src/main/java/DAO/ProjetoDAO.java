@@ -33,6 +33,7 @@ public class ProjetoDAO {
             stmt.executeUpdate();
             System.out.println("Projeto cadastrado com sucesso!");
         } catch (SQLException e) {
+            e.printStackTrace();
             System.err.println("Erro ao cadastrar projeto: " + e.getMessage());
         }
     }
@@ -90,6 +91,7 @@ public class ProjetoDAO {
                     projeto.setNomeODS(rs.getString("nome_ODS"));
                     projeto.setNomeResponsavel(rs.getString("nome_Responsavel"));
                     projeto.setStatus(rs.getString("status"));
+                    projeto.setCurtidas(rs.getInt("curtidas"));
                 }
             }
         } catch (SQLException e) {
