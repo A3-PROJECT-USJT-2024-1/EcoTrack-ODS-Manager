@@ -22,11 +22,12 @@ CREATE TABLE IF NOT EXISTS tb_Projeto (
     nome_Projeto VARCHAR(200) NOT NULL,
     descricao TEXT NOT NULL,
     data_Criacao DATE NOT NULL,
+    numero_Ods INT,
     nome_ODS VARCHAR(200),
-    status BOOLEAN NOT NULL,
+    status VARCHAR(200),
     nome_Responsavel VARCHAR(255),
     curtida INT DEFAULT 0,
-    FOREIGN KEY (nome_ODS) REFERENCES tb_Ods(nome_Ods)
+    FOREIGN KEY (numero_Ods) REFERENCES tb_Ods(numero_Ods)
 );
 
 CREATE TABLE IF NOT EXISTS tb_Curte (
@@ -61,3 +62,6 @@ INSERT INTO tb_Ods (numero_Ods, nome_Ods) VALUES
 (16, 'Paz, Justiça e Instituições Eficazes'),
 (17, 'Parcerias e Meios de Implementação');
 
+USE db_ecotrack;
+SELECT * FROM tb_projeto;
+ALTER TABLE tb_Projeto ADD COLUMN nome_ODS VARCHAR(200) AFTER numero_Ods;
