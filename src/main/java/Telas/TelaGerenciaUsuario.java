@@ -4,6 +4,8 @@
  */
 package Telas;
 
+import DAO.UsuarioDAO;
+import Model.Usuario;
 import javax.swing.JOptionPane;
 
 /**
@@ -17,6 +19,7 @@ public class TelaGerenciaUsuario extends javax.swing.JFrame {
      */
     public TelaGerenciaUsuario() {
         initComponents();
+        usuarioDAO = new UsuarioDAO();
     }
 
     /**
@@ -46,7 +49,6 @@ public class TelaGerenciaUsuario extends javax.swing.JFrame {
         textFieldTelefone = new javax.swing.JTextField();
         textFieldNome = new javax.swing.JTextField();
         textFieldEmail = new javax.swing.JTextField();
-        alterarSenhaButton = new javax.swing.JButton();
 
         setTitle("ECO Track - Gerenciar Usuário");
         setResizable(false);
@@ -68,6 +70,11 @@ public class TelaGerenciaUsuario extends javax.swing.JFrame {
 
         pesquisarUsuarioButton.setText("Pesquisar");
         pesquisarUsuarioButton.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        pesquisarUsuarioButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pesquisarUsuarioButtonActionPerformed(evt);
+            }
+        });
 
         salvarButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/11646.jpg"))); // NOI18N
         salvarButton.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -78,7 +85,7 @@ public class TelaGerenciaUsuario extends javax.swing.JFrame {
         });
 
         ComboBoxPrivilegios.setForeground(new java.awt.Color(255, 255, 255));
-        ComboBoxPrivilegios.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Usuario Comum", "Administrador" }));
+        ComboBoxPrivilegios.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Usuario", "Administrador" }));
         ComboBoxPrivilegios.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ComboBoxPrivilegiosActionPerformed(evt);
@@ -147,15 +154,6 @@ public class TelaGerenciaUsuario extends javax.swing.JFrame {
             }
         });
 
-        alterarSenhaButton.setText("Alterar");
-        alterarSenhaButton.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        alterarSenhaButton.setFocusable(false);
-        alterarSenhaButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                alterarSenhaButtonActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -170,12 +168,10 @@ public class TelaGerenciaUsuario extends javax.swing.JFrame {
                             .addComponent(jLabel8)
                             .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                            .addComponent(ComboBoxPrivilegios, javax.swing.GroupLayout.PREFERRED_SIZE, 570, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(passwordFieldSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 572, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addComponent(alterarSenhaButton, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(29, Short.MAX_VALUE))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(passwordFieldSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 572, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(ComboBoxPrivilegios, javax.swing.GroupLayout.PREFERRED_SIZE, 570, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap(127, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
@@ -235,15 +231,12 @@ public class TelaGerenciaUsuario extends javax.swing.JFrame {
                         .addGap(18, 18, 18)))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(alterarSenhaButton))
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(passwordFieldSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(ComboBoxPrivilegios, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(ComboBoxPrivilegios, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(passwordFieldSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(salvarButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -297,10 +290,21 @@ public class TelaGerenciaUsuario extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(null, "Alterção feita com sucesso");
     }//GEN-LAST:event_salvarButtonActionPerformed
 
-    private void alterarSenhaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_alterarSenhaButtonActionPerformed
-        // TODO add your handling code here:
-        JOptionPane.showMessageDialog(null, "Senha Alterada com sucesso.");
-    }//GEN-LAST:event_alterarSenhaButtonActionPerformed
+    private void pesquisarUsuarioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pesquisarUsuarioButtonActionPerformed
+
+        String login = textFieldUsuario.getText();
+        Usuario usuario = usuarioDAO.pesquisarUsuario(login);
+        if (usuario != null) {
+            textFieldNome.setText(usuario.getNome());
+            textFieldTelefone.setText(usuario.getTelefone());
+            textFieldEmail.setText(usuario.getEmail());
+            passwordFieldSenha.setText(usuario.getSenha());
+            ComboBoxPrivilegios.setSelectedItem(usuario.getPrivilegio());
+        } else {
+            JOptionPane.showMessageDialog(null, "Usuário não encontrado.");
+        }
+    
+    }//GEN-LAST:event_pesquisarUsuarioButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -339,7 +343,6 @@ public class TelaGerenciaUsuario extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> ComboBoxPrivilegios;
-    private javax.swing.JButton alterarSenhaButton;
     private javax.swing.JButton concluidoButton;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

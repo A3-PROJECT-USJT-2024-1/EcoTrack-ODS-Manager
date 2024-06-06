@@ -2,27 +2,49 @@ package Model;
 
 public class Usuario {
     private int idUsuario;
+    private String loginUsuario;
+    private String senha;
     private String nome;
     private String telefone;
     private String email;
-    private String senha;
-    private String privilegio; 
-    
-    public Usuario(int idUsuario, String nome, String telefone, String email, String senha, String privilegio) {
+    private String privilegio;
+
+    public Usuario() {
+    }
+
+    public Usuario(int idUsuario, String loginUsuario, String senha, String nome, String telefone, String email, String privilegio) {
         this.idUsuario = idUsuario;
+        this.loginUsuario = loginUsuario;
+        this.senha = senha;
         this.nome = nome;
         this.telefone = telefone;
         this.email = email;
-        this.senha = senha;
-        this.privilegio = privilegio; 
+        this.privilegio = privilegio;
     }
 
+    // Getters and Setters
     public int getIdUsuario() {
         return idUsuario;
     }
 
     public void setIdUsuario(int idUsuario) {
         this.idUsuario = idUsuario;
+    }
+
+    public String getLoginUsuario() {
+        return loginUsuario;
+    }
+
+    public void setLoginUsuario(String loginUsuario) {
+        this.loginUsuario = loginUsuario;
+    }
+
+    public String getSenha() {
+        return senha;
+    }
+
+    public void setSenha(String senha) {
+        this.senha = senha;
     }
 
     public String getNome() {
@@ -47,14 +69,6 @@ public class Usuario {
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public String getSenha() {
-        return senha;
-    }
-
-    public void setSenha(String senha) {
-        this.senha = senha;
     }
 
     public String getPrivilegio() {

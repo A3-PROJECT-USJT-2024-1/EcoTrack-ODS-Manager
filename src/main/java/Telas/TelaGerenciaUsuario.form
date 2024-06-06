@@ -61,13 +61,11 @@
                               <Component id="jLabel6" alignment="2" min="-2" pref="75" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="32767" attributes="0"/>
-                          <Group type="103" groupAlignment="2" attributes="0">
-                              <Component id="ComboBoxPrivilegios" alignment="2" min="-2" pref="570" max="-2" attributes="0"/>
-                              <Component id="passwordFieldSenha" alignment="2" min="-2" pref="572" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="passwordFieldSenha" min="-2" pref="572" max="-2" attributes="0"/>
+                              <Component id="ComboBoxPrivilegios" min="-2" pref="570" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="alterarSenhaButton" min="-2" pref="80" max="-2" attributes="0"/>
-                          <EmptySpace pref="29" max="32767" attributes="0"/>
+                          <EmptySpace pref="127" max="32767" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
@@ -145,18 +143,14 @@
                   </Group>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
+                          <Component id="jLabel6" min="-2" pref="35" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jLabel6" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
-                              <Component id="alterarSenhaButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel8" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                              <Component id="ComboBoxPrivilegios" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="jLabel8" min="-2" pref="35" max="-2" attributes="0"/>
                       </Group>
-                      <Group type="102" attributes="0">
-                          <Component id="passwordFieldSenha" min="-2" pref="30" max="-2" attributes="0"/>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="ComboBoxPrivilegios" min="-2" pref="30" max="-2" attributes="0"/>
-                      </Group>
+                      <Component id="passwordFieldSenha" min="-2" pref="30" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace pref="15" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
@@ -199,6 +193,9 @@
               </Border>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="pesquisarUsuarioButtonActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="salvarButton">
           <Properties>
@@ -222,7 +219,7 @@
             </Property>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
               <StringArray count="2">
-                <StringItem index="0" value="Usuario Comum"/>
+                <StringItem index="0" value="Usuario"/>
                 <StringItem index="1" value="Administrador"/>
               </StringArray>
             </Property>
@@ -366,20 +363,6 @@
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="textFieldEmailActionPerformed"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JButton" name="alterarSenhaButton">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Alterar"/>
-            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-              <Border info="org.netbeans.modules.form.compat2.border.BevelBorderInfo">
-                <BevelBorder/>
-              </Border>
-            </Property>
-            <Property name="focusable" type="boolean" value="false"/>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="alterarSenhaButtonActionPerformed"/>
           </Events>
         </Component>
       </SubComponents>
