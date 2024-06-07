@@ -41,16 +41,13 @@ public class TelaProjetoUsuario extends javax.swing.JFrame {
         DetalhesDoProjetoButtonW = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jPanel3 = new javax.swing.JPanel();
-        CurtirButtonW = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         TextAreaW = new javax.swing.JTextArea();
         jScrollPane3 = new javax.swing.JScrollPane();
         TextAreaX = new javax.swing.JTextArea();
         TextProjetoW = new javax.swing.JTextField();
         TextProjetoX = new javax.swing.JTextField();
-        CurtirButtonX = new javax.swing.JButton();
         TextProjetoZ = new javax.swing.JTextField();
-        CurtirButtonZ = new javax.swing.JButton();
         jScrollPane5 = new javax.swing.JScrollPane();
         TextAreaZ = new javax.swing.JTextArea();
 
@@ -154,20 +151,15 @@ public class TelaProjetoUsuario extends javax.swing.JFrame {
 
         jPanel3.setPreferredSize(new java.awt.Dimension(590, 840));
 
-        CurtirButtonW.setFont(new java.awt.Font("Gliker", 0, 12)); // NOI18N
-        CurtirButtonW.setForeground(new java.awt.Color(0, 0, 0));
-        CurtirButtonW.setText("Curtir");
-        CurtirButtonW.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CurtirButtonWActionPerformed(evt);
-            }
-        });
-
+        TextAreaW.setEditable(false);
         TextAreaW.setColumns(20);
+        TextAreaW.setLineWrap(true);
         TextAreaW.setRows(5);
         jScrollPane2.setViewportView(TextAreaW);
 
+        TextAreaX.setEditable(false);
         TextAreaX.setColumns(20);
+        TextAreaX.setLineWrap(true);
         TextAreaX.setRows(5);
         jScrollPane3.setViewportView(TextAreaX);
 
@@ -191,15 +183,6 @@ public class TelaProjetoUsuario extends javax.swing.JFrame {
             }
         });
 
-        CurtirButtonX.setFont(new java.awt.Font("Gliker", 0, 12)); // NOI18N
-        CurtirButtonX.setForeground(new java.awt.Color(0, 0, 0));
-        CurtirButtonX.setText("Curtir");
-        CurtirButtonX.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CurtirButtonXActionPerformed(evt);
-            }
-        });
-
         TextProjetoZ.setEditable(false);
         TextProjetoZ.setFont(new java.awt.Font("Gliker", 0, 12)); // NOI18N
         TextProjetoZ.setForeground(new java.awt.Color(0, 0, 0));
@@ -210,16 +193,9 @@ public class TelaProjetoUsuario extends javax.swing.JFrame {
             }
         });
 
-        CurtirButtonZ.setFont(new java.awt.Font("Gliker", 0, 12)); // NOI18N
-        CurtirButtonZ.setForeground(new java.awt.Color(0, 0, 0));
-        CurtirButtonZ.setText("Curtir");
-        CurtirButtonZ.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CurtirButtonZActionPerformed(evt);
-            }
-        });
-
+        TextAreaZ.setEditable(false);
         TextAreaZ.setColumns(20);
+        TextAreaZ.setLineWrap(true);
         TextAreaZ.setRows(5);
         jScrollPane5.setViewportView(TextAreaZ);
 
@@ -235,10 +211,7 @@ public class TelaProjetoUsuario extends javax.swing.JFrame {
                     .addComponent(jScrollPane5)
                     .addComponent(TextProjetoZ)
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(TextProjetoX)
-                    .addComponent(CurtirButtonW, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(CurtirButtonX, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(CurtirButtonZ, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(TextProjetoX))
                 .addContainerGap(9, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
@@ -248,21 +221,15 @@ public class TelaProjetoUsuario extends javax.swing.JFrame {
                 .addComponent(TextProjetoW, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(CurtirButtonW, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(80, 80, 80)
                 .addComponent(TextProjetoX, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(CurtirButtonX, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(62, 62, 62)
                 .addComponent(TextProjetoZ, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(CurtirButtonZ, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(15, Short.MAX_VALUE))
+                .addContainerGap(71, Short.MAX_VALUE))
         );
 
         jScrollPane1.setViewportView(jPanel3);
@@ -359,10 +326,6 @@ public class TelaProjetoUsuario extends javax.swing.JFrame {
 
     }//GEN-LAST:event_GerenciarProjetosButtonActionPerformed
 
-    private void CurtirButtonXActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CurtirButtonXActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_CurtirButtonXActionPerformed
-
     private void TextProjetoXActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TextProjetoXActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_TextProjetoXActionPerformed
@@ -371,17 +334,9 @@ public class TelaProjetoUsuario extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_TextProjetoWActionPerformed
 
-    private void CurtirButtonWActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CurtirButtonWActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_CurtirButtonWActionPerformed
-
     private void TextProjetoZActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TextProjetoZActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_TextProjetoZActionPerformed
-
-    private void CurtirButtonZActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CurtirButtonZActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_CurtirButtonZActionPerformed
 
     private void DetalhesDoProjetoButtonWActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DetalhesDoProjetoButtonWActionPerformed
         // TODO add your handling code here:
@@ -429,9 +384,6 @@ public class TelaProjetoUsuario extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton CriarProjetosButton;
-    private javax.swing.JButton CurtirButtonW;
-    private javax.swing.JButton CurtirButtonX;
-    private javax.swing.JButton CurtirButtonZ;
     private javax.swing.JButton DetalhesDoProjetoButtonW;
     private javax.swing.JButton GerenciarProjetosButton;
     private javax.swing.JButton ProcurarProjetoButton;

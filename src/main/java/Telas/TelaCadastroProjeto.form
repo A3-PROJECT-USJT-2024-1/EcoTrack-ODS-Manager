@@ -57,25 +57,27 @@
                   <EmptySpace pref="127" max="32767" attributes="0"/>
               </Group>
               <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace pref="115" max="32767" attributes="0"/>
-                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                      <Component id="jScrollPane1" alignment="1" pref="596" max="32767" attributes="0"/>
-                      <Component id="lbl_ODS" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="lbl_Nome" alignment="0" min="-2" pref="123" max="-2" attributes="0"/>
-                      <Component id="txi_NomeProjeto" alignment="0" max="32767" attributes="0"/>
-                      <Component id="lbl_Descricao" alignment="0" min="-2" pref="172" max="-2" attributes="0"/>
-                      <Component id="lbl_Responsavel" alignment="0" min="-2" pref="208" max="-2" attributes="0"/>
-                      <Component id="txi_UsuarioResponsavel" alignment="0" max="32767" attributes="0"/>
-                      <Component id="cmb_ODS" alignment="0" max="32767" attributes="0"/>
-                  </Group>
-                  <EmptySpace min="-2" pref="89" max="-2" attributes="0"/>
-              </Group>
-              <Group type="102" alignment="1" attributes="0">
                   <EmptySpace min="-2" pref="206" max="-2" attributes="0"/>
                   <Component id="btnCadastrar" min="-2" pref="100" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
                   <Component id="btnCancelar" min="-2" pref="101" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="167" max="-2" attributes="0"/>
+              </Group>
+              <Group type="102" alignment="1" attributes="0">
+                  <EmptySpace pref="115" max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                      <Component id="jScrollPane2" pref="596" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                          <Component id="lbl_ODS" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="lbl_Nome" alignment="0" min="-2" pref="123" max="-2" attributes="0"/>
+                          <Component id="txi_NomeProjeto" alignment="0" max="32767" attributes="0"/>
+                          <Component id="lbl_Descricao" alignment="0" min="-2" pref="172" max="-2" attributes="0"/>
+                          <Component id="lbl_Responsavel" alignment="0" min="-2" pref="208" max="-2" attributes="0"/>
+                          <Component id="txi_UsuarioResponsavel" alignment="0" max="32767" attributes="0"/>
+                          <Component id="cmb_ODS" alignment="0" pref="596" max="32767" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <EmptySpace min="-2" pref="89" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -91,8 +93,8 @@
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="lbl_Descricao" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jScrollPane1" min="-2" pref="166" max="-2" attributes="0"/>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Component id="jScrollPane2" min="-2" pref="172" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
                   <Component id="lbl_Responsavel" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="txi_UsuarioResponsavel" min="-2" pref="30" max="-2" attributes="0"/>
@@ -167,21 +169,6 @@
             <Property name="text" type="java.lang.String" value="ODS:"/>
           </Properties>
         </Component>
-        <Container class="javax.swing.JScrollPane" name="jScrollPane1">
-          <AuxValues>
-            <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
-          </AuxValues>
-
-          <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
-          <SubComponents>
-            <Component class="javax.swing.JTextArea" name="jTextArea1">
-              <Properties>
-                <Property name="columns" type="int" value="20"/>
-                <Property name="rows" type="int" value="5"/>
-              </Properties>
-            </Component>
-          </SubComponents>
-        </Container>
         <Component class="javax.swing.JComboBox" name="cmb_ODS">
           <Properties>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -233,6 +220,22 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCancelarActionPerformed"/>
           </Events>
         </Component>
+        <Container class="javax.swing.JScrollPane" name="jScrollPane2">
+          <AuxValues>
+            <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+          </AuxValues>
+
+          <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+          <SubComponents>
+            <Component class="javax.swing.JTextArea" name="jTextArea1">
+              <Properties>
+                <Property name="columns" type="int" value="20"/>
+                <Property name="lineWrap" type="boolean" value="true"/>
+                <Property name="rows" type="int" value="5"/>
+              </Properties>
+            </Component>
+          </SubComponents>
+        </Container>
       </SubComponents>
     </Container>
   </SubComponents>

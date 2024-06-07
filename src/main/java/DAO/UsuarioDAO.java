@@ -8,6 +8,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class UsuarioDAO {
+
     private Connection conexao;
 
     public UsuarioDAO() {
@@ -17,7 +18,7 @@ public class UsuarioDAO {
 
     public void inserirUsuario(String loginUsuario, String senha, String nome, String telefone, String email, String privilegio) {
         String sql = "INSERT INTO tb_Usuario(login_Usuario, senha, nome, telefone, email, privilegio) VALUES(?, ?, ?, ?, ?, ?)";
-        
+
         try (PreparedStatement ps = conexao.prepareStatement(sql)) {
             ps.setString(1, loginUsuario);
             ps.setString(2, senha);
@@ -34,7 +35,7 @@ public class UsuarioDAO {
 
     public Usuario verificarLogin(String loginUsuario, String senha) {
         String sql = "SELECT id_Usuario, nome, telefone, email, privilegio FROM tb_Usuario WHERE login_Usuario = ? AND senha = ?";
-        
+
         try (PreparedStatement ps = conexao.prepareStatement(sql)) {
             ps.setString(1, loginUsuario);
             ps.setString(2, senha);
@@ -59,7 +60,7 @@ public class UsuarioDAO {
     public Usuario pesquisarUsuario(String login) {
         String sql = "SELECT * FROM tb_Usuario WHERE login_Usuario = ?";
         Usuario usuario = null;
-        
+
         try (PreparedStatement stmt = conexao.prepareStatement(sql)) {
             stmt.setString(1, login);
             ResultSet rs = stmt.executeQuery();
@@ -80,8 +81,15 @@ public class UsuarioDAO {
 
     public boolean atualizarUsuario(Usuario usuario) {
         String sql = "UPDATE tb_Usuario SET nome = ?, telefone = ?, email = ?, senha = ?, privilegio = ? WHERE login_Usuario = ?";
-        
+
         try (PreparedStatement stmt = conexao.prepareStatement(sql)) {
+            System.out.println("Nome: " + usuario.getNome());
+            System.out.println("Telefone: " + usuario.getTelefone());
+            System.out.println("Email: " + usuario.getEmail());
+            System.out.println("Senha: " + usuario.getSenha());
+            System.out.println("Privilegio: " + usuario.getPrivilegio());
+            System.out.println("LoginUsuario: " + usuario.getLoginUsuario());
+
             stmt.setString(1, usuario.getNome());
             stmt.setString(2, usuario.getTelefone());
             stmt.setString(3, usuario.getEmail());
@@ -89,8 +97,14 @@ public class UsuarioDAO {
             stmt.setString(5, usuario.getPrivilegio());
             stmt.setString(6, usuario.getLoginUsuario());
             int rowsUpdated = stmt.executeUpdate();
-            return rowsUpdated > 0;
+            if (rowsUpdated > 0) {
+                System.out.println("Usuário atualizado com sucesso!");
+                return true;
+            } else {
+                System.err.println("Nenhuma linha foi atualizada. Verifique se o login_Usuario está correto.");
+            }
         } catch (SQLException e) {
+            System.err.println("Erro ao atualizar usuário: " + e.getMessage());
             e.printStackTrace();
         }
         return false;

@@ -20,7 +20,7 @@ public class TelaGerenciaUsuario extends javax.swing.JFrame {
     public TelaGerenciaUsuario() {
         initComponents();
     }
-    
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -114,7 +114,11 @@ public class TelaGerenciaUsuario extends javax.swing.JFrame {
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Senha:");
 
-        passwordFieldSenha.setText("jPasswordField1");
+        passwordFieldSenha.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                passwordFieldSenhaActionPerformed(evt);
+            }
+        });
 
         jLabel8.setFont(new java.awt.Font("Liberation Sans", 3, 15)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
@@ -281,8 +285,37 @@ public class TelaGerenciaUsuario extends javax.swing.JFrame {
     }//GEN-LAST:event_concluidoButtonActionPerformed
 
     private void salvarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salvarButtonActionPerformed
-        // TODO add your handling code here:
-        JOptionPane.showMessageDialog(null, "Alterção feita com sucesso");
+
+        String nome = textFieldNome.getText();
+        String telefone = textFieldTelefone.getText();
+        String email = textFieldEmail.getText();
+        String senha = new String(passwordFieldSenha.getPassword());
+        String privilegio = (String) ComboBoxPrivilegios.getSelectedItem();
+        String login = textFieldUsuario.getText(); // Obtém o login do campo textFieldUsuario
+
+        System.out.println("Nome: " + nome);
+        System.out.println("Telefone: " + telefone);
+        System.out.println("Email: " + email);
+        System.out.println("Senha: " + senha);
+        System.out.println("Privilegio: " + privilegio);
+        System.out.println("Login: " + login); // Exibe o login no console
+
+        Usuario usuario = new Usuario();
+        usuario.setNome(nome);
+        usuario.setTelefone(telefone);
+        usuario.setEmail(email);
+        usuario.setSenha(senha);
+        usuario.setPrivilegio(privilegio);
+        usuario.setLoginUsuario(login);
+
+        UsuarioDAO usuarioDAO = new UsuarioDAO();
+        boolean sucesso = usuarioDAO.atualizarUsuario(usuario);
+
+        if (sucesso) {
+            JOptionPane.showMessageDialog(this, "Alteração feita com sucesso.");
+        } else {
+            JOptionPane.showMessageDialog(this, "Erro ao salvar as alterações.");
+        }
     }//GEN-LAST:event_salvarButtonActionPerformed
 
     private void pesquisarUsuarioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pesquisarUsuarioButtonActionPerformed
@@ -299,8 +332,12 @@ public class TelaGerenciaUsuario extends javax.swing.JFrame {
         } else {
             JOptionPane.showMessageDialog(null, "Usuário não encontrado.");
         }
-    
+
     }//GEN-LAST:event_pesquisarUsuarioButtonActionPerformed
+
+    private void passwordFieldSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordFieldSenhaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_passwordFieldSenhaActionPerformed
 
     /**
      * @param args the command line arguments

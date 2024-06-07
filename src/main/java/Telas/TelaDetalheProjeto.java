@@ -41,11 +41,12 @@ public class TelaDetalheProjeto extends javax.swing.JFrame {
         btn_Curtir = new javax.swing.JButton();
         btnProcurar = new javax.swing.JButton();
         textfieldNomeProjeto = new javax.swing.JTextField();
-        textfieldDescricaoProjeto = new javax.swing.JTextField();
         textfieldCriadorProjeto = new javax.swing.JTextField();
         lblCurtidas = new javax.swing.JLabel();
         textfieldLeituraCurtidas = new javax.swing.JTextField();
         textfieldIDInserido = new javax.swing.JTextField();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        textfieldDescricaoProjeto = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -89,9 +90,6 @@ public class TelaDetalheProjeto extends javax.swing.JFrame {
         textfieldNomeProjeto.setEditable(false);
         textfieldNomeProjeto.setBorder(javax.swing.BorderFactory.createTitledBorder("Nome do Projeto"));
 
-        textfieldDescricaoProjeto.setEditable(false);
-        textfieldDescricaoProjeto.setBorder(javax.swing.BorderFactory.createTitledBorder("Descrição do Projeto"));
-
         textfieldCriadorProjeto.setEditable(false);
         textfieldCriadorProjeto.setBorder(javax.swing.BorderFactory.createTitledBorder("Criador do Projeto"));
 
@@ -100,6 +98,12 @@ public class TelaDetalheProjeto extends javax.swing.JFrame {
         lblCurtidas.setText("Curtidas:");
 
         textfieldLeituraCurtidas.setEditable(false);
+
+        textfieldDescricaoProjeto.setColumns(20);
+        textfieldDescricaoProjeto.setLineWrap(true);
+        textfieldDescricaoProjeto.setRows(5);
+        textfieldDescricaoProjeto.setBorder(javax.swing.BorderFactory.createTitledBorder("Descrição do Projeto"));
+        jScrollPane1.setViewportView(textfieldDescricaoProjeto);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -119,14 +123,14 @@ public class TelaDetalheProjeto extends javax.swing.JFrame {
                                 .addComponent(btnProcurar))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(lbl_Data, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 316, Short.MAX_VALUE)
                                 .addComponent(lblCurtidas, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(textfieldLeituraCurtidas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(72, 72, 72))
                             .addComponent(textfieldNomeProjeto)
-                            .addComponent(textfieldDescricaoProjeto, javax.swing.GroupLayout.DEFAULT_SIZE, 624, Short.MAX_VALUE)
-                            .addComponent(textfieldCriadorProjeto))))
+                            .addComponent(textfieldCriadorProjeto)
+                            .addComponent(jScrollPane1))))
                 .addContainerGap(88, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
@@ -151,8 +155,8 @@ public class TelaDetalheProjeto extends javax.swing.JFrame {
                     .addComponent(lbl_Data)
                     .addComponent(lblCurtidas)
                     .addComponent(textfieldLeituraCurtidas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(textfieldDescricaoProjeto, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(textfieldCriadorProjeto, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -290,11 +294,12 @@ public class TelaDetalheProjeto extends javax.swing.JFrame {
     private javax.swing.JButton btn_Concluido;
     private javax.swing.JButton btn_Curtir;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblCurtidas;
     private javax.swing.JLabel lbl_Data;
     private javax.swing.JLabel lbl_Tema;
     private javax.swing.JTextField textfieldCriadorProjeto;
-    private javax.swing.JTextField textfieldDescricaoProjeto;
+    private javax.swing.JTextArea textfieldDescricaoProjeto;
     private javax.swing.JTextField textfieldIDInserido;
     private javax.swing.JTextField textfieldLeituraCurtidas;
     private javax.swing.JTextField textfieldNomeProjeto;

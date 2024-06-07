@@ -39,7 +39,6 @@ public class TelaGerenciarProjeto extends javax.swing.JFrame {
         txtfieldNome = new java.awt.TextField();
         label3 = new java.awt.Label();
         txtfieldCriacaoProjeto = new java.awt.TextField();
-        txtfieldDescricao = new java.awt.TextField();
         label4 = new java.awt.Label();
         label5 = new java.awt.Label();
         txtfieldResponsavel = new java.awt.TextField();
@@ -50,6 +49,8 @@ public class TelaGerenciarProjeto extends javax.swing.JFrame {
         btnSalvarNoBanco = new javax.swing.JButton();
         txtfieldODS = new java.awt.TextField();
         txtfieldSituacao = new java.awt.TextField();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        txtfieldDescricao = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -91,18 +92,6 @@ public class TelaGerenciarProjeto extends javax.swing.JFrame {
         txtfieldCriacaoProjeto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtfieldCriacaoProjetoActionPerformed(evt);
-            }
-        });
-
-        txtfieldDescricao.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        txtfieldDescricao.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                txtfieldDescricaoFocusLost(evt);
-            }
-        });
-        txtfieldDescricao.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtfieldDescricaoActionPerformed(evt);
             }
         });
 
@@ -165,10 +154,19 @@ public class TelaGerenciarProjeto extends javax.swing.JFrame {
             }
         });
 
+        txtfieldDescricao.setColumns(20);
+        txtfieldDescricao.setLineWrap(true);
+        txtfieldDescricao.setRows(5);
+        jScrollPane1.setViewportView(txtfieldDescricao);
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(294, 294, 294)
+                .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(25, 25, 25)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -201,7 +199,6 @@ public class TelaGerenciarProjeto extends javax.swing.JFrame {
                                         .addComponent(txtfieldSituacao, javax.swing.GroupLayout.PREFERRED_SIZE, 377, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
                                 .addComponent(btnSalvarNoBanco, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(txtfieldDescricao, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(txtfieldNome, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -211,12 +208,9 @@ public class TelaGerenciarProjeto extends javax.swing.JFrame {
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                                 .addComponent(label5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(19, 19, 19)
-                                .addComponent(txtfieldResponsavel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                .addComponent(txtfieldResponsavel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING))
                         .addGap(78, 78, 78))))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(294, 294, 294)
-                .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -242,8 +236,8 @@ public class TelaGerenciarProjeto extends javax.swing.JFrame {
                     .addComponent(btnProcurar))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
                 .addComponent(label4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtfieldDescricao, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(2, 2, 2)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(label5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -304,14 +298,6 @@ public class TelaGerenciarProjeto extends javax.swing.JFrame {
     private void txtfieldCriacaoProjetoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtfieldCriacaoProjetoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtfieldCriacaoProjetoActionPerformed
-
-    private void txtfieldDescricaoFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtfieldDescricaoFocusLost
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtfieldDescricaoFocusLost
-
-    private void txtfieldDescricaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtfieldDescricaoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtfieldDescricaoActionPerformed
 
     private void btnProcurarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProcurarActionPerformed
         int id = Integer.parseInt(txtfieldID.getText());
@@ -419,6 +405,7 @@ public class TelaGerenciarProjeto extends javax.swing.JFrame {
     private javax.swing.JButton btnSalvarNoBanco;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
     private java.awt.Label label1;
     private java.awt.Label label2;
     private java.awt.Label label3;
@@ -427,7 +414,7 @@ public class TelaGerenciarProjeto extends javax.swing.JFrame {
     private java.awt.Label label6;
     private java.awt.Label label7;
     private java.awt.TextField txtfieldCriacaoProjeto;
-    private java.awt.TextField txtfieldDescricao;
+    private javax.swing.JTextArea txtfieldDescricao;
     private java.awt.TextField txtfieldID;
     private java.awt.TextField txtfieldNome;
     private java.awt.TextField txtfieldODS;
