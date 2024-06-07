@@ -19,9 +19,8 @@ public class TelaGerenciaUsuario extends javax.swing.JFrame {
      */
     public TelaGerenciaUsuario() {
         initComponents();
-        usuarioDAO = new UsuarioDAO();
     }
-
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -84,7 +83,6 @@ public class TelaGerenciaUsuario extends javax.swing.JFrame {
             }
         });
 
-        ComboBoxPrivilegios.setForeground(new java.awt.Color(255, 255, 255));
         ComboBoxPrivilegios.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Usuario", "Administrador" }));
         ComboBoxPrivilegios.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -116,21 +114,20 @@ public class TelaGerenciaUsuario extends javax.swing.JFrame {
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Senha:");
 
-        passwordFieldSenha.setForeground(new java.awt.Color(255, 255, 255));
         passwordFieldSenha.setText("jPasswordField1");
 
         jLabel8.setFont(new java.awt.Font("Liberation Sans", 3, 15)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("Privilégios:");
 
-        textFieldUsuario.setForeground(new java.awt.Color(255, 255, 255));
+        textFieldUsuario.setToolTipText("");
+        textFieldUsuario.setCaretColor(new java.awt.Color(0, 0, 0));
         textFieldUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 textFieldUsuarioActionPerformed(evt);
             }
         });
 
-        textFieldTelefone.setForeground(new java.awt.Color(255, 255, 255));
         textFieldTelefone.setMaximumSize(new java.awt.Dimension(570, 570));
         textFieldTelefone.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -138,7 +135,6 @@ public class TelaGerenciaUsuario extends javax.swing.JFrame {
             }
         });
 
-        textFieldNome.setForeground(new java.awt.Color(255, 255, 255));
         textFieldNome.setMaximumSize(new java.awt.Dimension(570, 570));
         textFieldNome.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -146,7 +142,6 @@ public class TelaGerenciaUsuario extends javax.swing.JFrame {
             }
         });
 
-        textFieldEmail.setForeground(new java.awt.Color(255, 255, 255));
         textFieldEmail.setMaximumSize(new java.awt.Dimension(570, 570));
         textFieldEmail.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -293,6 +288,7 @@ public class TelaGerenciaUsuario extends javax.swing.JFrame {
     private void pesquisarUsuarioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pesquisarUsuarioButtonActionPerformed
 
         String login = textFieldUsuario.getText();
+        UsuarioDAO usuarioDAO = new UsuarioDAO();
         Usuario usuario = usuarioDAO.pesquisarUsuario(login);
         if (usuario != null) {
             textFieldNome.setText(usuario.getNome());
