@@ -177,6 +177,8 @@ public class TelaLogin extends javax.swing.JFrame {
                 telaProjeto.setVisible(true);
             }
             this.dispose(); // Fecha a tela de login
+        } else if (user == null) {
+            JOptionPane.showMessageDialog(this, "Login ou senha incorretos", "Erro", JOptionPane.ERROR_MESSAGE);
         } else {
             JOptionPane.showMessageDialog(this, "Login ou senha incorretos", "Erro", JOptionPane.ERROR_MESSAGE);
         }

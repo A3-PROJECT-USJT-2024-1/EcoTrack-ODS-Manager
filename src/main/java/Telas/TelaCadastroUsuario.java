@@ -201,16 +201,22 @@ public class TelaCadastroUsuario extends javax.swing.JFrame {
         String senha = new String(passfieldSenha.getPassword());
         String privilegio = "Usuario";
 
-        UsuarioDAO usuarioDAO = new UsuarioDAO();
-        usuarioDAO.inserirUsuario(loginUsuario, senha, nome, telefone, email, privilegio);
+        if ("".equals(nome) || "".equals(email) || "".equals(telefone) || "".equals(senha)) {
+            JOptionPane.showMessageDialog(this, "Campos obrigatórios ausentes", "Erro", JOptionPane.ERROR_MESSAGE);
+        } else {
 
-        JOptionPane.showMessageDialog(this, "Usuário cadastrado com sucesso!", "Sucesso", JOptionPane.INFORMATION_MESSAGE);
+            UsuarioDAO usuarioDAO = new UsuarioDAO();
+            usuarioDAO.inserirUsuario(loginUsuario, senha, nome, telefone, email, privilegio);
 
-        // Volta para a tela de login
-        TelaLogin telaLogin = new TelaLogin();
-        telaLogin.setVisible(true);
+            JOptionPane.showMessageDialog(this, "Usuário cadastrado com sucesso!", "Sucesso", JOptionPane.INFORMATION_MESSAGE);
 
-        this.dispose();
+            // Volta para a tela de login
+            TelaLogin telaLogin = new TelaLogin();
+            telaLogin.setVisible(true);
+
+            this.dispose();
+        }
+
 
     }//GEN-LAST:event_btnConcluidoActionPerformed
 
