@@ -74,4 +74,12 @@ A equipe da Star5 valoriza muito o seu feedback! Envie suas sugestões e coment�
 
 ---
 
+**Equipe HighEnd:** 
+- Pedro Henrique da Silva Santos 
+- Felipe Ferreira Veiga 
+- Renan Coqueiro Albuquerque
+- Rafaella Ribeiro Vasconcellos 
+- Mayara Souza Lima 
+- Vinicius Soares Barbosa
+
 Feito com ❤️ pela equipe Star5.
