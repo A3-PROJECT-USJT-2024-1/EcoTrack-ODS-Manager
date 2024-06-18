@@ -74,9 +74,4 @@ A equipe da Star5 valoriza muito o seu feedback! Envie suas sugestões e coment�
 
 ---
 
-Equipe HighEnd
-- Pedro Henrique da Silva Santos
-RA: 
-- Renan Coqueiro Albuquerque 
-
 Feito com ❤️ pela equipe Star5.
