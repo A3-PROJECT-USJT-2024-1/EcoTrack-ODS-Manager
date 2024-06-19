@@ -1,6 +1,6 @@
 # EcoTrack
 
-EcoTrack é um software de gestão de projetos focado em sustentabilidade e eficiência, desenvolvido pela equipe Star5. Ele facilita a organização e o acompanhamento de projetos, com uma interface amigável e acessível para usuários de todas as idades.
+EcoTrack é um software de gestão de projetos focado em sustentabilidade e eficiência, desenvolvido pela equipe Star5 (Empresa fictícia para entrega do projeto da faculdade). Ele facilita a organização e o acompanhamento de projetos, com uma interface amigável e acessível para usuários de todas as idades.
 
 ## Funcionalidades
 
@@ -73,13 +73,5 @@ A equipe da Star5 valoriza muito o seu feedback! Envie suas sugestões e coment�
 **Email:** starfive5.co@gmail.com
 
 ---
-
-**Equipe HighEnd:** 
-- Pedro Henrique da Silva Santos 
-- Felipe Ferreira Veiga 
-- Renan Coqueiro Albuquerque
-- Rafaella Ribeiro Vasconcellos 
-- Mayara Souza Lima 
-- Vinicius Soares Barbosa
 
 Feito com ❤️ pela equipe Star5.
